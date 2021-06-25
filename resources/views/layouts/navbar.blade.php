@@ -1,8 +1,8 @@
 <div class="isNavbar sticky-top">
     <div class="container py-3">
         <div class="row">
-            <div class="col-md-7 col-xl-4">
-                <svg class="open-sign" id="open" xmlns="http://www.w3.org/2000/svg" width="86" height="86" viewBox="0 0 86 86">
+            <div class=" d-flex mx-auto col-md-7 col-xl-4">
+                <svg class="open-sign" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
                     <g id="Group_1" data-name="Group 1" transform="translate(16.192 8.096)">
                         <path id="Path_1" data-name="Path 1" d="M18.71,43.557a2.52,2.52,0,0,1-2.222-3.7L32.68,9.432A2.52,2.52,0,1,1,37.128,11.8L20.936,42.221a2.52,2.52,0,0,1-2.226,1.336Z" transform="translate(-16.192 -8.096)" fill="#f2d231"/>
                     </g>
@@ -50,7 +50,7 @@
                 <button class="x-button ">F.A.Q</button>
                 <button class="x-button ">Contact</button>
             </div>
-            <div class="col-md-3 d-inline-flex align-items-center justify-content-center col-xl-2 cart">
+            <div class="d-sm-none col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
                 @include('shared.cart')
             </div>
             <div class=" col-md-2 d-md-flex d-xl-none burger-menu-button">

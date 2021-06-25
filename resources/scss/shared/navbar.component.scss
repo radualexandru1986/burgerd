@@ -2,15 +2,29 @@
   background-color:rgba(0,0,0,1);
   padding:0;
   margin:0;
+  .open-sign{
+    width: 86px;
+    height: 86px;
+    @media only screen and (max-width: 576px){
+      width: 50px;
+    }
+  }
   .header-phone{
     text-align:center;
     background:none;
     color:white;
-    font-size:30px;
     border:none;
     margin:.7rem;
     line-height: 1.8rem;
     padding: .3rem;
+    @media only screen and (max-width: 5000px){
+      font-size:30px;
+    }
+    @media only screen and (max-width: 576px){
+      font-size:20px;
+      margin:auto;
+    }
+
   }
 
   .x-button{
@@ -110,15 +124,15 @@
       text-align: center;
       display:none;
     }
-      .open-sign-holder{
-        border:1px solid red;
-        margin:auto;
-        text-align: right;
-        width:auto;
-      }
-      .open-sign{
-        transform: rotate(-30deg);
-      }
+    .open-sign-holder{
+      border:1px solid red;
+      margin:auto;
+      text-align: right;
+      width:auto;
+    }
+    .open-sign{
+      transform: rotate(-30deg);
+    }
     .x-button{
       font-size:18px;
       padding:.7rem .5rem ;
@@ -127,9 +141,9 @@
     .x-special{
       color:red;
     }
-      .burger-menu-button, .cart{
-        display:none;
-      }
+    .burger-menu-button, .cart{
+      display:none;
+    }
   }
 }
 @media only screen and (max-width: 576px) {

@@ -12355,15 +12355,34 @@ textarea.form-control-lg {
   padding: 0;
   margin: 0;
 }
+.isNavbar .open-sign {
+  width: 86px;
+  height: 86px;
+}
+@media only screen and (max-width: 576px) {
+  .isNavbar .open-sign {
+    width: 50px;
+  }
+}
 .isNavbar .header-phone {
   text-align: center;
   background: none;
   color: white;
-  font-size: 30px;
   border: none;
   margin: 0.7rem;
   line-height: 1.8rem;
   padding: 0.3rem;
+}
+@media only screen and (max-width: 5000px) {
+  .isNavbar .header-phone {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .isNavbar .header-phone {
+    font-size: 20px;
+    margin: auto;
+  }
 }
 .isNavbar .x-button {
   width: auto;

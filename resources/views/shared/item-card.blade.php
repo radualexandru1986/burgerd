@@ -1,4 +1,4 @@
-<div class="card" >
+<div class="card shadow" >
     <img src="/images/menu.jpg" class="card-img-top" alt="...">
     <div class="card-body">
         <div class="row mb-2">
@@ -17,7 +17,6 @@
         <p class="card-text" style="font-weight: lighter">
             Mayo and chicken for your delight.
         </p>
-
         <div class="row mt-5 mb-2">
             <div class="col-6 mx-auto">
                 <h2 class="w-100 text-center"> <i class="bi bi-plus-circle-fill"></i> 1 <i class="bi bi-dash-circle-fill"></i> </h2>
