@@ -12521,7 +12521,7 @@ textarea.form-control-lg {
 }
 @media only screen and (max-width: 576px) {
   .isHero {
-    background-image: url("/images/secondbg.jpg");
+    background-image: url("/images/thirdbg.jpg");
   }
 }
 
@@ -12571,7 +12571,7 @@ textarea.form-control-lg {
 }
 @media only screen and (max-width: 576px) {
   .darkOverlay .heroText {
-    padding-top: 30vh;
+    padding-top: 10vh;
   }
   .darkOverlay .heroText .beastText {
     letter-spacing: 0.3rem;

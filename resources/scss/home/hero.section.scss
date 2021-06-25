@@ -4,7 +4,7 @@
   background-color:black;
   background-image: url('/images/mainbg.jpg');
   @media only screen and (max-width: 576px){
-    background-image: url('/images/secondbg.jpg');
+    background-image: url('/images/thirdbg.jpg');
   }
 
 }
@@ -46,7 +46,7 @@
         }
       }
       @media only screen and (max-width: 576px)  {
-        padding-top:30vh;
+        padding-top:10vh;
         .beastText{
           letter-spacing:.3rem;
           text-shadow: black;
