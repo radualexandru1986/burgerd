@@ -12483,11 +12483,6 @@ textarea.form-control-lg {
   }
 }
 
-@media only screen and (max-width: 576px) {
-  .isNavbar {
-    background: none;
-  }
-}
 .x-cart {
   border: 2px solid white;
   background-color: black;
@@ -12507,7 +12502,6 @@ textarea.form-control-lg {
 }
 
 .darkOverlay {
-  font-family: cooper_blackregular;
   position: relative;
   width: 100%;
   height: 100%;
@@ -12515,7 +12509,7 @@ textarea.form-control-lg {
 }
 @media only screen and (max-width: 5000px) {
   .darkOverlay .heroText {
-    margin: 10vh 0 auto auto;
+    padding-top: 10vh;
   }
   .darkOverlay .heroText .beastText {
     letter-spacing: 0.3rem;
@@ -12526,7 +12520,7 @@ textarea.form-control-lg {
 }
 @media only screen and (max-width: 1200px) {
   .darkOverlay .heroText {
-    margin: 20vh 0 auto auto;
+    padding-top: 20vh;
   }
   .darkOverlay .heroText .beastText {
     letter-spacing: 0.3rem;
@@ -12537,7 +12531,7 @@ textarea.form-control-lg {
 }
 @media only screen and (max-width: 992px) {
   .darkOverlay .heroText {
-    margin: 10vh 0 auto auto;
+    padding-top: 10vh;
   }
   .darkOverlay .heroText .beastText {
     letter-spacing: 0.3rem;
@@ -12548,7 +12542,7 @@ textarea.form-control-lg {
 }
 @media only screen and (max-width: 576px) {
   .darkOverlay .heroText {
-    margin: 10vh 0 auto auto;
+    padding-top: 30vh;
   }
   .darkOverlay .heroText .beastText {
     letter-spacing: 0.3rem;
@@ -12596,4 +12590,8 @@ textarea.form-control-lg {
   .darkOverlay .call-to-action .call-to-action-btn:hover {
     background-color: #FF3D00;
   }
+}
+
+body {
+  font-family: cooper_blackregular;
 }

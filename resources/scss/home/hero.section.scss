@@ -5,14 +5,13 @@
   background-color:black;
 }
 .darkOverlay {
-  font-family: cooper_blackregular;
   position:relative;
   width: 100%;
   height: 100%;
   background-color:rgba(0,0,0,0.3);
     .heroText{
       @media only screen and (max-width: 5000px)  {
-        margin:10vh 0 auto auto;
+        padding-top:10vh;
         .beastText{
           letter-spacing:.3rem;
           text-shadow: black;
@@ -21,7 +20,7 @@
         }
       }
       @media only screen and (max-width: 1200px)  {
-        margin:20vh 0 auto auto;
+        padding-top:20vh;
         .beastText{
           letter-spacing:.3rem;
           text-shadow: black;
@@ -30,7 +29,7 @@
         }
       }
       @media only screen and (max-width: 992px)  {
-        margin:10vh 0 auto auto;
+        padding-top:10vh;
         .beastText{
           letter-spacing:.3rem;
           text-shadow: black;
@@ -40,7 +39,7 @@
         }
       }
       @media only screen and (max-width: 576px)  {
-        margin:10vh 0 auto auto;
+        padding-top:30vh;
         .beastText{
           letter-spacing:.3rem;
           text-shadow: black;
