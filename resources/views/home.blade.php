@@ -13,7 +13,8 @@
                         </h1>
                 </div>
                 <div class="call-to-action">
-                    <button class="call-to-action-btn">ORDER NOW</button>
+                    <a href="#menu_start">
+                    <button class="call-to-action-btn" >ORDER NOW</button></a>
                 </div>
             </div>
         </section>

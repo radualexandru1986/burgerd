@@ -12595,3 +12595,7 @@ textarea.form-control-lg {
 body {
   font-family: cooper_blackregular;
 }
+
+html {
+  scroll-behavior: smooth;
+}
