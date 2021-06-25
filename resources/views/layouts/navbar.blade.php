@@ -1,5 +1,5 @@
 <div class="isNavbar sticky-top">
-    <div class="container py-3">
+    <div class="container py-sm-0 py-xl-3">
         <div class="row">
             <div class=" d-flex mx-auto col-md-7 col-xl-4">
                 <svg class="open-sign" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
