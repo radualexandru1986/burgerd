@@ -1,0 +1,96 @@
+.isHero{
+  height: 100vh;
+  background-image: url('/images/mainbg.jpg');
+  background-size: cover;
+  background-color:black;
+}
+.darkOverlay {
+  font-family: cooper_blackregular;
+  position:relative;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.3);
+    .heroText{
+      @media only screen and (max-width: 5000px)  {
+        margin:10vh 0 auto auto;
+        .beastText{
+          letter-spacing:.3rem;
+          text-shadow: black;
+          color:white;
+          line-height: 7rem;
+        }
+      }
+      @media only screen and (max-width: 1200px)  {
+        margin:20vh 0 auto auto;
+        .beastText{
+          letter-spacing:.3rem;
+          text-shadow: black;
+          color:white;
+          line-height: 3.5rem;
+        }
+      }
+      @media only screen and (max-width: 992px)  {
+        margin:10vh 0 auto auto;
+        .beastText{
+          letter-spacing:.3rem;
+          text-shadow: black;
+          color:white;
+          line-height: 6rem;
+
+        }
+      }
+      @media only screen and (max-width: 576px)  {
+        margin:10vh 0 auto auto;
+        .beastText{
+          letter-spacing:.3rem;
+          text-shadow: black;
+          color:white;
+          line-height: 3rem;
+        }
+      }
+    }
+  @media only screen and (max-width: 5000px) {
+    .call-to-action {
+        width: 100%;
+        text-align: center;
+        margin-top:3rem;
+          .call-to-action-btn {
+            background-color:#0f0000;
+            color:white;
+            //padding:1.5rem 4rem;
+            width: 392px;
+            height: 111px;
+            font-size:40px;
+            border:5px solid white;
+            border-radius:25px;
+            transition-duration: 400ms;
+            &:hover{
+              background-color:#FF3D00;
+            }
+          }
+      }
+  }
+  @media only screen and (max-width: 767px) {
+    .call-to-action {
+        width: 100%;
+        text-align: center;
+        margin-top:3rem;
+          .call-to-action-btn {
+            background-color:#0f0000;
+            color:white;
+            //padding:1.5rem 4rem;
+            width: 60%;
+            height: 80px;
+            font-size:20px;
+            border:3px solid white;
+            border-radius:10px;
+            transition-duration: unset;
+            &:hover{
+              background-color:#FF3D00;
+            }
+          }
+      }
+  }
+}
+
+

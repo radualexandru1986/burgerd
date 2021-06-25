@@ -1,0 +1,140 @@
+.isNavbar {
+  background-color:rgba(0,0,0,1);
+  padding:0;
+  margin:0;
+  .header-phone{
+    text-align:center;
+    background:none;
+    color:white;
+    font-size:30px;
+    border:none;
+    margin:.7rem;
+    line-height: 1.8rem;
+    padding: .3rem;
+  }
+
+  .x-button{
+    width:auto;
+    background-color:black;
+    border-radius:10px;
+    border:none;
+    //border:2px solid white;
+    color:white;
+    font-size:18px;
+    padding:.7rem .5rem ;
+  }
+    @media only screen and (max-width: 5000px)  {
+    .menu{
+      text-align: center;
+    }
+      .open-sign{
+        margin:auto;
+        text-align: right;
+        transform: rotate(-30deg);
+      }
+    .x-button{
+      padding:.7rem 1rem ;
+      margin:.5rem;
+    }
+    .x-special{
+      color:red;
+    }
+  }
+    @media only screen and (max-width: 1200px)  {
+    .menu{
+      text-align: center;
+    }
+      .open-sign-holder{
+        border:1px solid red;
+        margin:auto;
+        text-align: right;
+        width:auto;
+      }
+      .open-sign{
+        transform: rotate(-30deg);
+      }
+    .x-button{
+      padding:.7rem .5rem ;
+      border:none;
+    }
+    .x-special{
+      color:red;
+    }
+  }
+    @media only screen and (max-width: 1024px)  {
+    .menu{
+      text-align: center;
+    }
+      .open-sign-holder{
+        border:1px solid red;
+        margin:auto;
+        text-align: right;
+        width:auto;
+      }
+      .open-sign{
+        transform: rotate(-30deg);
+      }
+    .x-button{
+      font-size:18px;
+      padding:.7rem .5rem ;
+      border:2px solid white;
+    }
+    .x-special{
+      color:red;
+    }
+  }
+    @media only screen and (max-width: 768px)  {
+    .menu{
+      text-align: center;
+    }
+      .open-sign-holder{
+        border:1px solid red;
+        margin:auto;
+        text-align: right;
+        width:auto;
+      }
+      .open-sign{
+        transform: rotate(-30deg);
+      }
+    .x-button{
+      font-size:18px;
+      padding:.7rem .5rem ;
+      border:none;
+    }
+    .x-special{
+      color:red;
+    }
+  }
+    @media only screen and (max-width: 576px)  {
+    .menu{
+      text-align: center;
+      display:none;
+    }
+      .open-sign-holder{
+        border:1px solid red;
+        margin:auto;
+        text-align: right;
+        width:auto;
+      }
+      .open-sign{
+        transform: rotate(-30deg);
+      }
+    .x-button{
+      font-size:18px;
+      padding:.7rem .5rem ;
+      border:2px solid white;
+    }
+    .x-special{
+      color:red;
+    }
+      .burger-menu-button, .cart{
+        display:none;
+      }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .isNavbar {
+    background:none;
+  }
+}
+

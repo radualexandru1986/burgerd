@@ -1,0 +1,118 @@
+$base: 100px;
+@media only screen and (max-width: 5000px) {
+  .x-1{
+    font-size: #{$base};
+  }
+
+  .x-2{
+    font-size: calc(#{$base} + 70px);
+    color: #ff7700;
+  }
+  .x-3 {
+    font-size: calc(#{$base} + 70px);
+    color:#FF3D00;
+  }
+  .x-4{
+    font-size: calc(#{$base} + 20px);
+    color:white;
+  }
+  .x-5{
+    font-size: calc(#{$base} - 40px);
+    color:white;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  $base :20px;
+
+  .x-1{
+    font-size: #{$base};
+  }
+
+  .x-2{
+    font-size: calc(#{$base} + 70px);
+    color: #ff7700;
+  }
+  .x-3 {
+    font-size: calc(#{$base} + 70px);
+    color:#FF3D00;
+  }
+  .x-4{
+    font-size: calc(#{$base} + 20px);
+    color:white;
+  }
+  .x-5{
+    font-size: calc(#{$base});
+    color:white;
+  }
+}
+
+
+@media only screen and (max-width: 992px){
+  .x-1{
+    font-size: calc( #{$base} - 30px );
+  }
+
+  .x-2{
+    font-size: calc( #{$base}  );
+    color: #ff7700;
+  }
+  .x-3 {
+    font-size: calc(#{$base});
+    color:#FF3D00;
+  }
+  .x-4{
+    font-size: calc(#{$base} - 20px );
+    color:white;
+  }
+  .x-5{
+    font-size: calc(#{$base} - 40px);
+    color:white;
+  }
+}
+
+
+@media only screen and (max-width: 576px){
+  .x-1{
+    font-size: calc(#{$base} - 60px);
+  }
+
+  .x-2{
+    font-size: calc(#{$base} - 40px);
+    color: #ff7700;
+  }
+  .x-3 {
+    font-size: calc(#{$base} - 40px);
+    color:#FF3D00;
+  }
+  .x-4{
+    font-size: calc(#{$base} - 60px );
+    color:white;
+  }
+  .x-5{
+    font-size: calc(#{$base} - 80px);
+    color:white;
+  }
+}
+@media only screen and (max-width: 320px){
+  .x-1{
+    font-size: calc(#{$base} - 80px);
+  }
+
+  .x-2{
+    font-size: calc(#{$base} - 60px);
+    color: #ff7700;
+  }
+  .x-3 {
+    font-size: calc(#{$base} - 60px);
+    color:#FF3D00;
+  }
+  .x-4{
+    font-size: calc(#{$base} - 80px );
+    color:white;
+  }
+  .x-5{
+    font-size: calc(#{$base} - 85px);
+    color:white;
+  }
+}
