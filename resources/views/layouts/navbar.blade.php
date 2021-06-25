@@ -1,4 +1,4 @@
-<div class="isNavbar sticky-top">
+<div class="isNavbar sticky-top" >
     <div class="container py-sm-0 py-xl-3">
         <div class="row">
             <div class=" d-flex mx-auto col-md-7 col-xl-4">
@@ -53,8 +53,10 @@
             <div class="d-sm-none col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
                 @include('shared.cart')
             </div>
-            <div class=" col-md-2 d-md-flex d-xl-none burger-menu-button">
-                <button class="x-button w-100" style="font-size:30px;"><i class="bi bi-three-dots-vertical"></i></button>
+            <div class="d-sm-none col-md-2 d-md-flex d-xl-none burger-menu-button">
+                <button class="x-button w-100" style="font-size:30px;" data-bs-toggle="modal" data-bs-target="#menuModal">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
             </div>
         </div>
     </div>

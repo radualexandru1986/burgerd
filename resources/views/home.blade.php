@@ -25,5 +25,5 @@
             @include('shared/footer')
         </section>
     </div>
-
+@include('layouts.side-menu')
 @endsection

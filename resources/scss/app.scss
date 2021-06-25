@@ -14,6 +14,7 @@
 @import "./home/hero.section";
 @import "./menu-section/submenu.component.scss";
 @import "./shared/item-card.module.scss";
+@import "./layouts/sidemenu.component.scss";
 body{
   font-family: cooper_blackregular;
   background-image: linear-gradient(61deg, #ff3d00 25%, #fff 25%, #fff 50%, #ff3d00 50%, #ff3d00 75%, #fff 75%, #fff 100%);

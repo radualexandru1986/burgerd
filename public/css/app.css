@@ -12647,6 +12647,32 @@ textarea.form-control-lg {
   padding: 0.7rem 0.5rem;
 }
 
+.modal-menu {
+  background-color: #FF3CAC;
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  height: 40vh;
+  background-color: black;
+  width: 50vw;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-menu .modal-item {
+  font-size: 1.3rem;
+  width: 70%;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: auto;
+  background: none;
+  border-radius: 10px;
+}
+
 body {
   font-family: cooper_blackregular;
   background-image: linear-gradient(61deg, #ff3d00 25%, #fff 25%, #fff 50%, #ff3d00 50%, #ff3d00 75%, #fff 75%, #fff 100%);
