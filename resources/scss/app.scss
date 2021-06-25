@@ -12,6 +12,8 @@
 @import "./shared/navbar.component";
 @import "shared/cart.module";
 @import "./home/hero.section";
+@import "./menu-section/submenu.component.scss";
+@import "./shared/item-card.module.scss";
 body{
   font-family: cooper_blackregular;
 }

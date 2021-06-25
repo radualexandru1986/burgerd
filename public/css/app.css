@@ -12592,6 +12592,32 @@ textarea.form-control-lg {
   }
 }
 
+.sub-menu .x-button {
+  width: 20%;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  font-size: 18px;
+  padding: 0.7rem 0.5rem;
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+.sub-menu .x-button:hover {
+  background-color: #ff7700;
+  color: white;
+}
+
+.card .x-button {
+  width: auto;
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 0.7rem 0.5rem;
+}
+
 body {
   font-family: cooper_blackregular;
 }

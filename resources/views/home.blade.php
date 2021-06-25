@@ -21,5 +21,9 @@
         <section class="container">
             @include('layouts.menu-section')
         </section>
+        <section class="mb-0 mt-5 p-0">
+            @include('shared/footer')
+        </section>
     </div>
+
 @endsection
