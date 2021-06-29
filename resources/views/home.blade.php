@@ -18,7 +18,7 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container-xl">
             @include('layouts.menu-section')
         </section>
         <section class="mb-0 mt-5 p-0">
