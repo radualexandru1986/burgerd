@@ -1,7 +1,7 @@
 <div class="card shadow" >
     <img src="/images/menu.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-        <div class="row mb-2">
+        <div class="row mb-2 pl-2">
             <div class="stars col-6" style="color:#ff7700">
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
@@ -13,11 +13,11 @@
                 <span class="item-card-price" style="text-align: right">£ 8.99</span>
             </div>
         </div>
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text" style="font-weight: lighter">
+        <h4 class="card-title pl-2">Card title</h4>
+        <p class="card-text py-2" style="font-weight: lighter">
             A huge single or triple burger with all the fixings, cheese, lettuce, tomato, onions and special sauce or mayonnaise!
         </p>
-        <a class="btn btn-light view-recipe-button">
+        <a class="btn  view-recipe-button">
             <span class="view-recipe-button-text">View Recipe</span>
         </a>
         <div class="row mt-5 mb-2 add-area">
