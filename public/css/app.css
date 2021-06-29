@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Chela+One&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);
 @font-face {
   font-family: "bootstrap-icons";
   src: url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?dfd0ea122577eb61795f178e0347fa2c) format("woff2"),
@@ -12638,13 +12639,47 @@ textarea.form-control-lg {
 }
 
 .card .x-button {
-  width: auto;
-  background-color: black;
-  border-radius: 10px;
+  font-family: "Lato", sans-serif;
+  background-color: #FFAA00;
+  border-radius: 5px;
   border: none;
-  color: white;
+  color: black;
   font-size: 18px;
+  font-weight: 600;
   padding: 0.7rem 0.5rem;
+}
+.card .item-card-price {
+  font-family: "Lato", sans-serif;
+  padding: 0.2rem 0.6rem;
+  color: white;
+  border-radius: 5px;
+  background-color: #ff3d00;
+  font-size: 20px;
+}
+.card .card-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 600 !important;
+}
+.card .view-recipe-button-text {
+  font-family: "Lato", sans-serif;
+}
+.card .view-recipe-button {
+  color: purple;
+}
+.card .view-recipe-button:hover {
+  background-color: #ff3d00;
+  color: white;
+}
+.card .add-area {
+  font-family: "Lato", sans-serif;
+}
+.card .add-area .add-button {
+  cursor: pointer;
+  color: #ff3d00;
+  font-size: 40px;
+}
+.card .add-area .font-size-40 {
+  font-size: 40px;
 }
 
 .modal-menu {

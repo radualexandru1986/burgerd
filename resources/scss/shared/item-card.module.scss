@@ -1,12 +1,47 @@
 .card {
     .x-button{
-        width:auto;
-        background-color:black;
-        border-radius:10px;
+        font-family: 'Lato', sans-serif;
+        background-color:#FFAA00;
+        border-radius:5px;
         border:none;
-        color:white;
+        color:black;
         font-size:18px;
+        font-weight: 600;
         padding:.7rem .5rem ;
     }
+    .item-card-price {
+        font-family: 'Lato', sans-serif;
+        padding:.2rem .6rem;
+        color:white;
+        border-radius:5px;
+        background-color:#ff3d00;
+        font-size:20px;
+    }
+    .card-text{
+        font-family: 'Lato', sans-serif;
+        font-weight: 600!important;
+    }
+    .view-recipe-button-text {
+        font-family: 'Lato', sans-serif;
+    }
+    .view-recipe-button {
+        color:purple;
+        &:hover{
+            background-color:#ff3d00;
+            color:white;
+        }
+    }
+    .add-area{
+        font-family: 'Lato', sans-serif;
+        .add-button{
+            cursor: pointer;
+           color:#ff3d00;
+            font-size:40px;
+        }
+        .font-size-40 {
+            font-size:40px;
+        }
+    }
+
 }
 
