@@ -12493,7 +12493,7 @@ textarea.form-control-lg {
   .isNavbar .x-button {
     font-size: 18px;
     padding: 0.7rem 0.5rem;
-    border: 2px solid white;
+    border: none;
   }
   .isNavbar .x-special {
     color: red;
@@ -12683,13 +12683,10 @@ textarea.form-control-lg {
 }
 
 .modal-menu {
-  background-color: #FF3CAC;
-  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
   height: 40vh;
   background-color: black;
+  border: 1px solid white;
   width: 50vw;
-  border: 3px solid white;
-  border-radius: 10px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -12702,10 +12699,7 @@ textarea.form-control-lg {
   border: none;
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin: auto;
   background: none;
-  border-radius: 10px;
 }
 
 body {

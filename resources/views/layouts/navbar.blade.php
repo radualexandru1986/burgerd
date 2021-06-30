@@ -1,8 +1,8 @@
 <div class="isNavbar sticky-top" >
     <div class="container py-sm-0 py-xl-3">
-        <div class="row">
-            <div class=" d-flex mx-auto col-md-7 col-xl-4">
-                <svg class="open-sign" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
+        <div class="row ">
+            <div class="d-flex justify-content-between mx-auto col-md-7 col-xl-4">
+                <svg class="open-sign m-0 mx-sm-4" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
                     <g id="Group_1" data-name="Group 1" transform="translate(16.192 8.096)">
                         <path id="Path_1" data-name="Path 1" d="M18.71,43.557a2.52,2.52,0,0,1-2.222-3.7L32.68,9.432A2.52,2.52,0,1,1,37.128,11.8L20.936,42.221a2.52,2.52,0,0,1-2.226,1.336Z" transform="translate(-16.192 -8.096)" fill="#f2d231"/>
                     </g>
@@ -40,8 +40,11 @@
                     <path id="Path_11" data-name="Path 11" d="M76.733,38.517H43v5.039H76.733a4.232,4.232,0,0,1,4.227,4.227v28.95a4.232,4.232,0,0,1-4.227,4.227H43V86H76.733A9.277,9.277,0,0,0,86,76.734V47.784A9.277,9.277,0,0,0,76.733,38.517Z" transform="translate(0)" fill="#daebeb"/>
                     <path id="Path_12" data-name="Path 12" d="M53.615,10.616A10.628,10.628,0,0,0,43,0V21.231A10.627,10.627,0,0,0,53.615,10.616Z" transform="translate(0)" fill="#9ce0f6"/>
                 </svg>
-                <button class="header-phone">07305 436 556 <br>
+                <button class="header-phone mx-2">07305 436 556 <br>
                     <span style="color:#1DD600">Free delivery</span>
+                </button>
+                <button class="x-button d-sm-none " style="font-size:30px;" data-bs-toggle="modal" data-bs-target="#menuModal">
+                    <i class="bi bi-three-dots-vertical"></i>
                 </button>
             </div>
             <div class="d-sm-none d-md-none d-xl-flex col-xl-6 menu">
@@ -50,11 +53,11 @@
                 <button class="x-button ">F.A.Q</button>
                 <button class="x-button ">Contact</button>
             </div>
-            <div class="d-sm-none col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
+            <div class="d-none d-sm-flex col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
                 @include('shared.cart')
             </div>
-            <div class="d-sm-none col-md-2 d-md-flex d-xl-none burger-menu-button">
-                <button class="x-button w-100" style="font-size:30px;" data-bs-toggle="modal" data-bs-target="#menuModal">
+            <div class="d-none col-md-2 d-md-flex d-xl-none burger-menu-button">
+                <button class="x-button " style="font-size:30px;" data-bs-toggle="modal" data-bs-target="#menuModal">
                     <i class="bi bi-three-dots-vertical"></i>
                 </button>
             </div>
