@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container-fluid p-0 m-0">
-        @include('layouts.navbar')
+    <div class="container-fluid p-0 m-0 home-page">
         <section class="isHero m-0">
             <div class="darkOverlay">
                 <div class="heroText w-100 text-center" >
@@ -21,9 +20,7 @@
         <section class="container-xl">
             @include('layouts.menu-section')
         </section>
-        <section class="mb-0 mt-5 p-0">
-            @include('shared/footer')
-        </section>
+
     </div>
 @include('layouts.side-menu')
 @endsection
