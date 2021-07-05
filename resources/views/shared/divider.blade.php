@@ -1,5 +1,5 @@
 <div class="row pt-5" id="menu_start">
-    <div class="display-2 mt-5 mb-2 w-100 text-center">
+    <div class="display-2 col-xxl-8 mt-5 mb-2 mx-auto text-center bg-light text-dark">
         Our Products
     </div>
     <div class="col-xxl-8 col-md-12 mx-auto">
