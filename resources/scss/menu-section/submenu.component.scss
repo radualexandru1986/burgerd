@@ -1,23 +1,19 @@
-.menu-items-container {
   .sub-menu{
     .x-button{
-      width:20%;
-      background-color:white;
-      border-radius:10px;
-      //border:2px solid black;
-      border:none;
-      color:black;
+      background:none;
+      color:white;
       font-size:18px;
-      padding:.7rem .5rem ;
-      transition-duration: 400ms;
+      padding:.4rem .5rem ;
+      transition-duration: 200ms;
       cursor:pointer;
+      text-align:center;
       &:hover{
         background-color:#ff7700;
         color:white;
       }
     }
   }
-}
+
 
 
 

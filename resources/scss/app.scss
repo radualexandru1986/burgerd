@@ -2,6 +2,7 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import 'helpers';
 @font-face {
   font-family: 'cooper_blackregular';
@@ -15,6 +16,7 @@
 @import "./home/hero.section";
 @import "./menu-section/submenu.component.scss";
 @import "./shared/item-card.module.scss";
+@import "./shared/footer.component";
 @import "./layouts/sidemenu.component.scss";
 body{
   font-family: cooper_blackregular;
