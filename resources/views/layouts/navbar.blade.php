@@ -2,7 +2,7 @@
     <div class="container py-sm-0 py-xl-3">
         <div class="row ">
             <div class="d-flex justify-content-between mx-auto col-md-7 col-sm-12 col-xl-4">
-                <svg class="open-sign m-0 mx-sm-4" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
+                <svg class="open-sign m-0 mx-sm-4 mx-auto" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
                     <g id="Group_1" data-name="Group 1" transform="translate(16.192 8.096)">
                         <path id="Path_1" data-name="Path 1" d="M18.71,43.557a2.52,2.52,0,0,1-2.222-3.7L32.68,9.432A2.52,2.52,0,1,1,37.128,11.8L20.936,42.221a2.52,2.52,0,0,1-2.226,1.336Z" transform="translate(-16.192 -8.096)" fill="#f2d231"/>
                     </g>
@@ -43,10 +43,10 @@
 {{--                <button class="header-phone mx-2">07305 436 556 <br>--}}
 {{--                    <span style="color:#1DD600">Free delivery</span>--}}
 {{--                </button>--}}
-                <a href=" https://wa.me/+4407305436556?text=Hi%20there%2C%20I%20have%20a%20question..." class="btn x-button d-lg-none ">
+                <a href=" https://wa.me/+4407305436556?text=Hi%20there%2C%20I%20have%20a%20question..." class="btn x-button d-lg-none mx-auto ">
                     <img src="{{asset('images/whatsapp.png')}}" alt="" style="width:60px;">
                 </a>
-                <div class="d-flex , align-items-center justify-content-center">
+                <div class="d-flex mx-auto , align-items-center justify-content-center d-sm-none">
                     @include('shared.cart')
                 </div>
                 <button class="x-button d-sm-none " style="font-size:30px;" data-bs-toggle="modal" data-bs-target="#menuModal">
