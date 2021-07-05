@@ -21,7 +21,7 @@
             <span class="view-recipe-button-text">View Recipe</span>
         </a>
         <div class="row mt-5 mb-2 add-area">
-            <div class="col-6 mx-auto">
+            <div class="col-12  mx-auto">
                 <h2 class="w-100 text-center"> <i class="bi bi-plus-circle-fill add-button mx-2"></i> <strong class="font-size-40">1</strong> <i class="bi bi-dash-circle-fill mx-2 add-button"></i> </h2>
             </div>
         </div>
