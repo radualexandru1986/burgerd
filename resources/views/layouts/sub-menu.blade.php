@@ -1,4 +1,4 @@
-<div class="sub-menu mx-auto d-flex justify-content-between text-center col-lg-12 col-sm-8">
+<div class="sub-menu mx-auto d-flex justify-content-between text-center col-lg-12 col-sm-10">
     <div class="x-button">
         Burgers
     </div>
