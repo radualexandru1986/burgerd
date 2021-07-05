@@ -43,10 +43,12 @@
 {{--                <button class="header-phone mx-2">07305 436 556 <br>--}}
 {{--                    <span style="color:#1DD600">Free delivery</span>--}}
 {{--                </button>--}}
-                <a href=" https://wa.me/+4407305436556?text=I'm%20interested%20in%20your%20car%20for%20sale" class="btn btn-danger">
-                    <img src="{{asset('images/whatsapp.png')}}" alt="">
+                <a href=" https://wa.me/+4407305436556?text=Hi%20there%2C%20I%20have%20a%20question..." class="btn x-button d-lg-none ">
+                    <img src="{{asset('images/whatsapp.png')}}" alt="" style="width:60px;">
                 </a>
-
+                <div class="d-flex , align-items-center justify-content-center">
+                    @include('shared.cart')
+                </div>
                 <button class="x-button d-sm-none " style="font-size:30px;" data-bs-toggle="modal" data-bs-target="#menuModal">
                     <i class="bi bi-three-dots-vertical"></i>
                 </button>
@@ -57,7 +59,7 @@
                 <button class="x-button ">F.A.Q</button>
                 <button class="x-button ">Contact</button>
             </div>
-            <div class="d-none d-sm-flex col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
+            <div class=" d-sm-flex col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
                 @include('shared.cart')
             </div>
             <div class="d-none col-md-2 d-md-flex d-xl-none burger-menu-button">
