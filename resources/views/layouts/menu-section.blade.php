@@ -1,6 +1,6 @@
 @include('shared.divider')
 <div class="menu-items-container" >
-    <div class="row mt-4 justify-content-center">
+    <div class="row mt-4 justify-content-left">
         <div class="col-xxl-4 col-md-6 col-sm-10 mx-sm-auto my-3">
             <x-item
                     :photo="'images/menu/TheTurk.png'"
@@ -29,6 +29,14 @@
             <x-item
                     :photo="'images/menu/JuicyLucy.png'"
                     :n="'Juicy Lucy'"
+                    :price="'7.50'"
+                    :rated="'5'"
+                    :description="' A huge single or triple burger with all the fixings, cheese, lettuce, tomato, onions and special sauce or mayonnaise!'" />
+        </div>
+        <div class="col-xxl-4 col-md-6 col-sm-10 mx-sm-auto my-3">
+            <x-item
+                    :photo="'images/menu/HotDog.png'"
+                    :n="'Hot Dog'"
                     :price="'7.50'"
                     :rated="'5'"
                     :description="' A huge single or triple burger with all the fixings, cheese, lettuce, tomato, onions and special sauce or mayonnaise!'" />
