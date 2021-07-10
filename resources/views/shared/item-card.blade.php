@@ -1,5 +1,5 @@
 <div class="card shadow" >
-    <img src="/images/menu.jpg" class="card-img-top" alt="...">
+    <img src="/images/menu/burger1.png" class="card-img-top" alt="...">
     <div class="card-body">
         <div class="row mb-2 pl-2">
             <div class="stars col-6" style="color:#ff7700">

@@ -19,6 +19,9 @@
 @import "./shared/footer.component";
 @import "./layouts/sidemenu.component.scss";
 @import "./layouts/contact.component.scss";
+body{
+  font-family: cooper_blackregular;
+}
 html{
   scroll-behavior: smooth;
 }

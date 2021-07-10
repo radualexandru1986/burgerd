@@ -12528,7 +12528,6 @@ textarea.form-control-lg {
 }
 
 .home-page {
-  font-family: cooper_blackregular;
   background-image: linear-gradient(61deg, #ff3d00 25%, #fff 25%, #fff 50%, #ff3d00 50%, #ff3d00 75%, #fff 75%, #fff 100%);
   background-size: 1829.37px 3300.26px;
   background-repeat: no-repeat;
@@ -12664,6 +12663,7 @@ textarea.form-control-lg {
   font-size: 20px;
 }
 .card .card-text {
+  height: 70px;
   font-family: "Lato", sans-serif;
   font-weight: 600 !important;
 }
@@ -12717,6 +12717,10 @@ footer {
 .contact-form {
   background-color: white;
   height: 500px;
+}
+
+body {
+  font-family: cooper_blackregular;
 }
 
 html {
