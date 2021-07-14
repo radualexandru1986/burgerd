@@ -12703,7 +12703,6 @@ footer {
   position: fixed;
   z-index: 99999999;
   transition-duration: 300ms;
-  border: 1px solid white;
 }
 
 .closed {
