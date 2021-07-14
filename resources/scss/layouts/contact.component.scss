@@ -28,11 +28,13 @@
     justify-content: end;
     .channel{
       width:230px;
+      border:1px solid rgba(0,0,0,0.2);
       margin:.3rem ;
       padding:2rem;
       border-radius:5px;
         @media only screen and (max-width: 576px){
        width: 90%;
+          margin:2px;
       }
       @media only screen and (max-width: 1024px){
         width: 100%;
@@ -54,7 +56,6 @@
 
 .btn-grad {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
 .btn-grad {
-  margin: 10px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;

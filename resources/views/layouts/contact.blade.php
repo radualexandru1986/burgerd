@@ -32,16 +32,16 @@
                         <h1 class="display-4">or you can use </h1>
                         <h1>..other ways</h1>
                         <div class="block-container mt-4">
-                            <div class="channel btn-grad">
+                            <div class="channel ">
                                 <img src="{{asset('images/contactpage/icons8-facebook-480@2x.png')}}" alt="">
                             </div>
-                            <div class="channel btn-grad">
+                            <div class="channel ">
                                 <img src="{{asset('images/contactpage/icons8-facebook-messenger-480@2x.png')}}" alt="">
                             </div>
-                            <div class="channel btn-grad">
+                            <div class="channel ">
                                 <img src="{{asset('images/contactpage/icons8-whatsapp-512@2x.png')}}" alt="">
                             </div>
-                            <div class="channel btn-grad">
+                            <div class="channel ">
                                 <img src="{{asset('images/contactpage/telephone@2x.png')}}" alt="">
                             </div>
                         </div>
