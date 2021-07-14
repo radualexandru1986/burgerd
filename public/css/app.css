@@ -12697,15 +12697,15 @@ footer {
 .side-container {
   height: 80vh;
   background-color: black;
-  width: 400px;
-  top: 150px;
+  width: 300px;
+  top: 100px;
   position: fixed;
   z-index: 99999999;
   transition-duration: 300ms;
 }
 
 .closed {
-  right: -400px;
+  right: -300px;
 }
 
 .open {
