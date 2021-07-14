@@ -12719,6 +12719,89 @@ footer {
   height: 500px;
 }
 
+.has-custom-bg {
+  background: white;
+  background: linear-gradient(315deg, white 23%, #ff5700 23%, #ff5700 83%, white 83%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.has-form {
+  box-shadow: 0px 0px 1rem 2px rgba(0, 0, 0, 0.39) !important;
+  border-radius: 10px;
+}
+.has-form .form-control {
+  padding: 1rem;
+}
+.has-form .special-button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.has-form .block-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: end;
+  justify-content: end;
+}
+@media only screen and (max-width: 576px) {
+  .has-form .block-container {
+    grid-template-columns: auto;
+  }
+}
+.has-form .block-container .channel {
+  width: 230px;
+  margin: 0.3rem;
+  padding: 2rem;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 576px) {
+  .has-form .block-container .channel {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .has-form .block-container .channel {
+    width: 100%;
+    margin: auto;
+  }
+}
+.has-form .block-container .channel img {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 769px) {
+  .right-column {
+    text-align: right;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+.btn-grad {
+  background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 body {
   font-family: cooper_blackregular;
 }

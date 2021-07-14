@@ -2,3 +2,78 @@
   background-color:white;
   height: 500px;
 }
+.has-custom-bg {
+  background: rgb(255,255,255);
+  background: linear-gradient(315deg, rgba(255,255,255,1) 23%, rgba(255,87,0,1) 23%, rgba(255,87,0,1) 83%, rgba(255,255,255,1) 83%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.has-form{
+  box-shadow: 0px 0px 1rem 2px rgb(0 0 0 / 39%) !important;
+  border-radius:10px;
+  .form-control {
+    padding:1rem;
+  }
+  .special-button{
+    width: 100%;
+    border:none;
+    border-radius:5px;
+    padding:1rem;
+  }
+  .block-container{
+    display:grid;
+    grid-template-columns: auto auto;
+    @media only screen and (max-width: 576px){
+      grid-template-columns: auto;
+    }
+    align-items: end;
+    justify-content: end;
+    .channel{
+      width:230px;
+      margin:.3rem ;
+      padding:2rem;
+      border-radius:5px;
+        @media only screen and (max-width: 576px){
+       width: 100%;
+      }
+      @media only screen and (max-width: 1024px){
+        width: 100%;
+        margin:auto;
+      }
+      img{
+        max-width:100%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 769px){
+  .right-column {
+    text-align: right;
+    border-left: 1px solid rgba(0,0,0,0.2);
+  }
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+
+}
+
+
