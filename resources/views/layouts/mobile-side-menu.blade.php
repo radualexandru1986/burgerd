@@ -1,13 +1,16 @@
 <div class="side-container closed">
-
+    <div class="close-button text-center text-light" style="font-size: 50px;">
+        <i class="bi bi-x-square" onclick="toggleMenuState()"></i>
+        <div class="mobileMenuButtonsContainer">
+            <button class="btn btn-dark w-100 py-4">Home</button>
+            <button class="btn btn-dark w-100 py-4">Contact</button>
+            <button class="btn btn-dark w-100 py-4">F.A.Q</button>
+            <button class="btn btn-dark w-100 py-4">Order</button>
+        </div>
+    </div>
 </div>
 @push('scripts')
     <script>
-
-        document.getElementById('toggleMobileMenu').addEventListener('click', ()=>{
-            toggleMenuState()
-        })
-
         function toggleMenuState()
         {
             let store = window.localStorage;
