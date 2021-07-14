@@ -12694,24 +12694,22 @@ footer {
   font-family: "Roboto", sans-serif;
 }
 
-.modal-menu {
-  height: 40vh;
+.side-container {
+  height: 80vh;
   background-color: black;
-  border: 1px solid white;
-  width: 50vw;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 400px;
+  top: 150px;
+  position: fixed;
+  z-index: 99999999;
+  transition-duration: 300ms;
 }
-.modal-menu .modal-item {
-  font-size: 1.3rem;
-  width: 70%;
-  border: none;
-  color: white;
-  text-align: center;
-  background: none;
+
+.closed {
+  right: -400px;
+}
+
+.open {
+  right: 0;
 }
 
 .contact-form {

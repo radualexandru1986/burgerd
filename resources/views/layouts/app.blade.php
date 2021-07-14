@@ -17,8 +17,9 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        @include('layouts.navbar')
+      @include('layouts.navbar')
       @yield('content')
       @include('shared.footer')
+      @stack('scripts')
     </body>
 </html>

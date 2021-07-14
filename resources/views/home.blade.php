@@ -22,5 +22,5 @@
         </section>
 
     </div>
-@include('layouts.side-menu')
+
 @endsection

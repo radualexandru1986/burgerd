@@ -1,0 +1,17 @@
+.side-container {
+  height: 80vh;
+  background-color:black;
+  width: 400px;
+  top:150px;
+  position: fixed;
+  z-index: 99999999;
+  transition-duration: 300ms;
+}
+
+.closed {
+  right: -400px;
+}
+
+.open {
+  right:0;
+}
