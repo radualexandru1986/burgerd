@@ -12745,11 +12745,6 @@ footer {
   align-items: end;
   justify-content: end;
 }
-@media only screen and (max-width: 576px) {
-  .has-form .block-container {
-    grid-template-columns: auto;
-  }
-}
 .has-form .block-container .channel {
   width: 230px;
   margin: 0.3rem;
@@ -12758,7 +12753,7 @@ footer {
 }
 @media only screen and (max-width: 576px) {
   .has-form .block-container .channel {
-    width: 100%;
+    width: 90%;
   }
 }
 @media only screen and (max-width: 1024px) {
