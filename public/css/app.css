@@ -12766,9 +12766,10 @@ footer {
 }
 .has-form .block-container .channel img {
   max-width: 100%;
+  margin: auto;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1200px) {
   .right-column {
     text-align: right;
     border-left: 1px solid rgba(0, 0, 0, 0.2);
