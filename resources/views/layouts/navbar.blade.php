@@ -1,7 +1,7 @@
 <div class="isNavbar sticky-top" >
     <div class="container py-sm-0 py-xl-3">
         <div class="row ">
-            @include('layouts.mobile-side-menu')
+            <mobile-menu-component></mobile-menu-component>
             <div class="d-flex justify-content-between mx-auto col-md-7 col-sm-12 col-xl-4">
                 <svg class="open-sign m-0 mx-sm-4 mx-auto" id="open" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 86 86">
                     <g id="Group_1" data-name="Group 1" transform="translate(16.192 8.096)">
@@ -47,7 +47,7 @@
                 <div class="d-flex mx-auto , align-items-center justify-content-center d-sm-none">
                     @include('shared.cart')
                 </div>
-                <button class="x-button d-sm-none " style="font-size:30px;" onclick="toggleMenuState()">
+                <button class="x-button d-sm-none " style="font-size:30px;" @click="toggleMobileMenuState()">
                     <i class="bi bi-three-dots-vertical"></i>
                 </button>
             </div>
