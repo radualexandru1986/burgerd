@@ -19,20 +19,7 @@
             <a class="btn  view-recipe-button">
                 <span class="view-recipe-button-text">View Recipe</span>
             </a>
-            <div class="row mt-5 mb-2 add-area">
-                <div class="col-12  mx-auto">
-                    <h2 class="w-100 text-center"> <i class="bi bi-plus-circle-fill add-button mx-2"></i> <strong class="font-size-40">1</strong> <i class="bi bi-dash-circle-fill mx-2 add-button"></i> </h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 text-center my-2">
-                    <button class="x-button w-100">
-                        <span class="mr-5">Add to Cart</span>  <i class="bi bi-cart4 ml-5"></i>
-                    </button>
-                </div>
-            </div>
-
+            <add-to-cart-component :itemnumber={{$itemId}} :price={{$price}}></add-to-cart-component>
         </div>
     </div>
 </div>

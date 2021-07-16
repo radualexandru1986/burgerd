@@ -11,14 +11,16 @@ class Item extends Component
     public $price;
     public $rated;
     public $description;
+    public $itemId;
     
-    public function __construct($photo , $n=null , $price=null , $rated=null , $description=null)
+    public function __construct($photo , $n=null , $price=null , $rated=null , $description=null, $itemId=null)
     {
     	$this->photo = $photo;
 		$this->price = $price;
 		$this->n = $n;
 		$this->rated = $rated;
 		$this->description = $description;
+		$this->itemId = $itemId;
 	}
 
     /**
