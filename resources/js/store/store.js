@@ -1,6 +1,9 @@
 import ls, {get,set} from "local-storage";
 export const  burgerstore ={
     state: {
+        mobileMenu : {
+          closed : true
+        },
         orderItems :[]  //[{id:1234, quantity : 2}]
     },
     mutations: {
@@ -10,7 +13,6 @@ export const  burgerstore ={
         addItemsToOrder(state, payload) {
             //Search for the item id in the order
             let item = state.orderItems.filter(el=>el.id===payload.id)
-            console.log(item.length)
             //if the product has been added before we will just change the quantity
             if(item.length>0) {
                 let i = state.orderItems.indexOf(item[0]);
@@ -24,6 +26,10 @@ export const  burgerstore ={
 
         resurrectOrders(state, payload) {
             state.orderItems = payload
+        },
+
+        toggleMobileMenuState(state) {
+            state.mobileMenu.closed = !state.mobileMenu.closed
         }
     }
 }
