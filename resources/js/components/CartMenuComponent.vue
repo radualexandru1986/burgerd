@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <menu-card v-for="(item, key) in orderItems" v-bind:id="item.id" v-bind:quantity="item.quantity"/>
+            <menu-card v-for="(item, key) in orderItems" v-bind:key="key" v-bind:id="item.id" v-bind:quantity="item.quantity"/>
           </div>
           <button class="btn btn-dark" @click="resetOrder()"> Reset Order</button>
         </div>
