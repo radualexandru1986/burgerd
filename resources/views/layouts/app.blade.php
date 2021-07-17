@@ -22,6 +22,7 @@
         @yield('content')
         @include('shared.footer')
         @stack('scripts')
+        <cart-menu-component></cart-menu-component>
     </div>
 
     </body>

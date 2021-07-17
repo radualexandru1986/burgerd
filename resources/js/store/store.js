@@ -1,6 +1,41 @@
 import ls, {get,set} from "local-storage";
 export const  burgerstore ={
     state: {
+        assets :{
+            images : [
+                {
+                    id : '1',
+                    url: 'images/menu/TheTurk.png',
+                    itemName : 'The Turk'
+                },
+                {
+                    id : '2',
+                    url: 'images/menu/DoubleAnimal.png',
+                    itemName: 'Double Animal'
+                },
+                {
+                    id : '3',
+                    url: 'images/menu/VeganPrime.png',
+                    itemName: 'Vegan Prime'
+
+                },
+                {
+                    id : '4',
+                    url: 'images/menu/JuicyLucy.png',
+                    itemName: 'Juicy Lucy'
+                },
+                {
+                    id : '5',
+                    url: 'images/menu/HotDog.png',
+                    itemName: 'Hot Dog'
+                },
+                {
+                    id : '6',
+                    url: 'images/menu/salad.jpg',
+                    itemName: 'Chicken Salad'
+                },
+            ]
+        },
         mobileMenu : {
           closed : true
         },
@@ -26,6 +61,10 @@ export const  burgerstore ={
 
         resurrectOrders(state, payload) {
             state.orderItems = payload
+        },
+
+        resetOrder(state) {
+            state.orderItems = []
         },
 
         toggleMobileMenuState(state) {

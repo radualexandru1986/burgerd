@@ -1,23 +1,16 @@
 require('./bootstrap');
-
-// window.Vue = require('vue').default;
 import Vue from 'vue';
 import Vuex from 'vuex'
 import {burgerstore} from './store/store'
 import ls, {get, set} from 'local-storage'
-Vue.config.ignoredElements = [
-    'x-item']
+
+Vue.config.ignoredElements = ['x-item']
 Vue.use(Vuex)
 const store = new Vuex.Store(burgerstore)
 
 Vue.component('add-to-cart-component', require('./components/AddToCartComponent.vue').default);
 Vue.component('mobile-menu-component', require('./components/MobileMenuComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.component('cart-menu-component', require('./components/CartMenuComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
