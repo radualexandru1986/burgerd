@@ -1,7 +1,7 @@
 import ls, {get,set} from "local-storage";
 export const  burgerstore ={
     state: {
-        assets :{
+        assets: {
             images : [
                 {
                     id : '1',
@@ -36,10 +36,13 @@ export const  burgerstore ={
                 },
             ]
         },
-        mobileMenu : {
-          closed : true
+        mobileMenu: {
+            closed: true
         },
-        orderItems :[]  //[{id:1234, quantity : 2}]
+        toast: {
+            closed: true
+        },
+        orderItems: []  //[{id:1234, quantity : 2}]
     },
     mutations: {
         increment (state) {
@@ -51,7 +54,7 @@ export const  burgerstore ={
             //if the product has been added before we will just change the quantity
             if(item.length>0) {
                 let i = state.orderItems.indexOf(item[0]);
-                state.orderItems[i].quantity = state.orderItems[i].quantity + payload.quantity
+                state.orderItems[i].quantity =  payload.quantity
             }else{
                 //if is the first time they add the product then we will push it to the list
                 state.orderItems.push(payload)
@@ -69,6 +72,11 @@ export const  burgerstore ={
 
         toggleMobileMenuState(state) {
             state.mobileMenu.closed = !state.mobileMenu.closed
+        },
+
+        removeItemFromOrder(state, payload) {
+            state.orderItems = [...state.orderItems.filter(el => el.id !== payload.id)]
+            ls.set('orderItems', state.orderItems);
         }
     }
 }

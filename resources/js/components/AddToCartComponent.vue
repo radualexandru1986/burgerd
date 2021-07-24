@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-12 text-center my-2">
         <button class="x-button w-100" @click="addToCart()">
-          <span class="mr-5">Add to Cart</span>  <i class="bi bi-cart4 ml-5"></i>
+          <span class="mr-5">{{ buttonLabel }}</span>  <i class="bi bi-cart4 ml-5"></i>
         </button>
       </div>
     </div>
@@ -24,10 +24,21 @@
 
 export default {
   name : 'AddToCartComponent',
-  props : ['itemnumber', 'price'],
+  props : {
+    itemnumber: Number,
+    price: Number,
+    buttonLabel: {
+      default: 'Add To Cart',
+      type : String
+    },
+    addQuantity : {
+      default : 1,
+      type : Number
+    }
+  },
   data(){
     return {
-      quantity:1,
+      quantity:'',
     }
   },
   methods : {
@@ -40,14 +51,42 @@ export default {
     addToCart(){
       this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price})
     }
+  },
+
+  mounted() {
+    this.quantity = this.addQuantity;
   }
 
 }
 </script>
 
 <style scoped>
-    .x-button:hover{
-      background-color:#ff3d00;
-      color:white;
-    }
+  .x-button{
+    font-family: 'Lato', sans-serif;
+    background-color:#FFAA00;
+    border-radius:5px;
+    border:none;
+    color:black;
+    font-size:18px;
+    font-weight: 600;
+    padding:.7rem .5rem ;
+  }
+  .x-button:hover{
+    background-color:#ff3d00;
+    color:white;
+  }
+  .add-area {
+    font-family: 'Lato', sans-serif;
+  }
+  .add-area .add-button{
+    cursor: pointer;
+    color:#ff3d00;
+    font-size:40px;
+  }
+  .add-area .font-size-40 {
+    font-size:40px;
+  }
+
+
+
 </style>
