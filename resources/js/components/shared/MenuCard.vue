@@ -59,7 +59,7 @@ export default {
     removeItem(){
       this.$store.commit('removeItemFromOrder', {id:this.id})
       this.$toast.success("Item removed", {
-        position:'top-center',
+        position:'bottom-center',
         timeout:2000,
       });
     }

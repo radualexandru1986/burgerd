@@ -56,7 +56,7 @@ export default {
     addToCart(){
       this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price})
       this.$toast.success("Item Added", {
-        position:'top-center',
+        position:'bottom-center',
         timeout:2000,
       });
     }
