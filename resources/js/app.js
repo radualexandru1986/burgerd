@@ -11,6 +11,7 @@ const store = new Vuex.Store(burgerstore)
 Vue.component('add-to-cart-component', require('./components/AddToCartComponent.vue').default);
 Vue.component('mobile-menu-component', require('./components/MobileMenuComponent.vue').default);
 Vue.component('cart-menu-component', require('./components/CartMenuComponent.vue').default);
+Vue.component('toast', require('./components/shared/ToastComponent').default);
 
 const app = new Vue({
     el: '#app',
@@ -51,3 +52,5 @@ const app = new Vue({
         }
     }
 });
+
+
