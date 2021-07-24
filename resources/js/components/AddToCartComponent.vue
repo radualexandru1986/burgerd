@@ -13,7 +13,11 @@
     <div class="row">
       <div class="col-12 text-center my-2">
         <button class="x-button w-100" @click="addToCart()">
-          <span class="mr-5">{{ buttonLabel }}</span>  <i class="bi bi-cart4 ml-5"></i>
+          <div v-if="!loading">
+            <span class="mr-5">{{ buttonLabel }}</span>  <i class="bi bi-cart4 ml-5"></i>
+          </div>
+          <span v-if="loading"><loader></loader></span>
+
         </button>
       </div>
     </div>
@@ -39,6 +43,7 @@ export default {
   data(){
     return {
       quantity:'',
+      loading:false,
     }
   },
   methods : {
@@ -50,6 +55,10 @@ export default {
     },
     addToCart(){
       this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price})
+      this.$toast.success("Item Added", {
+        position:'top-center',
+        timeout:2000,
+      });
     }
   },
 

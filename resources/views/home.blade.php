@@ -20,7 +20,7 @@
         <section class="container-xl">
             @include('layouts.menu-section')
         </section>
-        <toast></toast>
+        
     </div>
 
 @endsection

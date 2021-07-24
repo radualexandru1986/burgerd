@@ -26,9 +26,10 @@
       <div :id="`id${id}`" class="accordion-collapse collapse" :aria-labelledby="`heading${id}`" data-bs-parent="#menu-card-example">
         <div class="accordion-body">
           This is the accordion body
-
           <add-to-cart-component :itemnumber="id" :price="price" :buttonLabel="buttonLabel"></add-to-cart-component>
-          <button class="btn border-1 border-danger delete-item w-100" @click="removeItem()"><i class="bi bi-trash"></i> Remove Item</button>
+          <button class="btn border-1 border-danger delete-item w-100"  @click="removeItem()">
+            <i class="bi bi-trash"></i> Remove Item
+          </button>
         </div>
       </div>
     </div>
@@ -48,9 +49,19 @@ export default {
     }
   },
 
+  data(){
+    return {
+      loading:false,
+    }
+  },
+
   methods :{
     removeItem(){
       this.$store.commit('removeItemFromOrder', {id:this.id})
+      this.$toast.success("Item removed", {
+        position:'top-center',
+        timeout:2000,
+      });
     }
   },
   computed:{

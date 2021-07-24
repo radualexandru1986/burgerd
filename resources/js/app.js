@@ -3,15 +3,20 @@ import Vue from 'vue';
 import Vuex from 'vuex'
 import {burgerstore} from './store/store'
 import ls, {get, set} from 'local-storage'
+import Toast from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
 
 Vue.config.ignoredElements = ['x-item']
 Vue.use(Vuex)
+Vue.use(Toast)
 const store = new Vuex.Store(burgerstore)
 
 Vue.component('add-to-cart-component', require('./components/AddToCartComponent.vue').default);
 Vue.component('mobile-menu-component', require('./components/MobileMenuComponent.vue').default);
 Vue.component('cart-menu-component', require('./components/CartMenuComponent.vue').default);
 Vue.component('toast', require('./components/shared/ToastComponent').default);
+Vue.component('loader', require('./components/shared/LoaderComponent').default);
 
 const app = new Vue({
     el: '#app',

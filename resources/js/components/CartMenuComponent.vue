@@ -34,7 +34,7 @@
                              v-bind:button-label="'Update Order'"
                   />
                 </div>
-                <div class=" col-12 col-xl-5" style="position:relative" >
+                <div class=" col-12 col-xl-5 mt-4 mt-lg-0" style="position:relative" >
                   <div >
                     <div class="summary-title">
                       <h1 class="p-0" style="text-align: right">Order summary </h1>
