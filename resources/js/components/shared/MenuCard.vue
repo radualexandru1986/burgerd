@@ -2,7 +2,7 @@
   <div class="col-12  menu-card">
     <div class="accordion-item">
       <h2 class="accordion-header" :id="`heading${id}`">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="`#id${id}`" aria-expanded="true" :aria-controls="id">
+        <button class="accordion-button" data-bs-toggle="collapse" :data-bs-target="`#id${id}`" aria-expanded="true" :aria-controls="id">
           <section class="row w-100">
             <div class="col-4 col-sm-4 p-0" >
               <img :src="assets.url" class="img-fluid rounded" alt="...">
@@ -125,7 +125,9 @@ export default {
     font-weight: lighter;
     font-size:12px;
   }
-
+.accordion-button{
+  background-color:white;
+}
   .item-card-footer{
       position:relative;
       text-align:right;
