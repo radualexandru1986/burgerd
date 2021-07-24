@@ -58,7 +58,7 @@ export default {
   methods :{
     removeItem(){
       this.$store.commit('removeItemFromOrder', {id:this.id})
-      this.$toast.success("Item removed", {
+      this.$toast.warning("Item removed", {
         position:'bottom-center',
         timeout:2000,
       });
