@@ -1,6 +1,6 @@
 <div>
     <div class="card shadow" >
-        <img src="{{$photo}}" class="card-img-top" alt="..." >
+        <img src="{{$photo}}" class="card-img-top" alt="{{$n}}" >
         <div class="card-body">
             <div class="row mb-2 pl-2">
                 <div class="stars col-6" style="color:#ff7700">
