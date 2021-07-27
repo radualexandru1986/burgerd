@@ -82,12 +82,15 @@ export default {
   },
   methods :{
     resetOrder(){
-      ls.remove('orderItems')
-      this.$store.commit('resetOrder')
-      this.$toast.success("All your items are gone.. ", {
-        position:'bottom-center',
-        timeout:4000,
-      });
+      if(confirm('Are you sure you want to delete everything ?? ')){
+        ls.remove('orderItems')
+        this.$store.commit('resetOrder')
+        this.$toast.success("All your items are gone.. ", {
+          position:'bottom-center',
+          timeout:3000,
+        });
+      }
+
     },
 
     toCheckout() {

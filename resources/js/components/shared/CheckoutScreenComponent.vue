@@ -26,10 +26,10 @@
       </form>
     </div>
     <div class="col-12">
-      <div class="col-12  mx-auto text-center p-1">
+      <div class="col-12  mx-auto text-center ">
         <button class="btn w-100 btn-dark btn-lg"> Verify Order !</button>
       </div>
-      <div class="col-12  mx-auto text-center p-1">
+      <div class="col-12  mx-auto text-center ">
         <button class="btn w-100  border-1 border-dark btn-lg" @click="backToOrders()"> Back To Orders Screen</button>
       </div>
     </div>
