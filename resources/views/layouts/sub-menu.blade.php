@@ -1,23 +1,22 @@
 <div class="sub-menu w-100">
     <div class="row bg-dark w-100 mx-auto d-flex flex-row">
-       <div class="x-button col">
+       <a href="/" class="x-button x-button-submenu col" data-find="burgers">
+           All
+       </a>
+        <a href="/burgers" class="x-button x-button-submenu col" data-find="burgers">
            Burgers
-       </div>
-       <div class="x-button col">
+       </a>
+       <a href="/salad" class="x-button x-button-submenu col" data-find="salad">
            Salad
-       </div>
-        <div class="x-button col">
+       </a>
+        <a href="/sides" class="x-button x-button-submenu col" data-find="sides">
            Sides
-       </div>
-        <div class="x-button col">
+       </a>
+        <a href="/vegan" class="x-button x-button-submenu col" data-find="vegan">
            Vegan
-       </div>
-        <div class="x-button col">
+       </a>
+        <a href="/beverages" class="x-button x-button-submenu col" data-find="beverages">
            Beverages
-       </div>
-        <div class="x-button col">
-           Desserts
-       </div>
-
+       </a>
     </div>
 </div>

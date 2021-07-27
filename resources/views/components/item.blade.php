@@ -1,4 +1,4 @@
-<div>
+<div class="{{$item->class}}">
     <div class="card shadow" >
         <img src="{{$item->photo}}" class="card-img-top" alt="{{$item->name}}" >
         <div class="card-body">

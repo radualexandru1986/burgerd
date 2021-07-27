@@ -57,7 +57,8 @@ const app = new Vue({
         if(ls.get('orderItems')){
             this.$store.commit('resurrectOrders', ls.get('orderItems'))
         }
-    }
+    },
+
 });
 
 

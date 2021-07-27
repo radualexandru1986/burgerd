@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Item $item)
+    public function index($search=null, Item $item)
 	{
-		return view('home', ['items'=>$item->all()]);
+		if(!$search){
+			$items = $item->all();
+		}else{
+			$items = $item->where('class', $search)->get();
+		}
+		
+		return view('home', ['items'=>$items]);
 	}
 }
