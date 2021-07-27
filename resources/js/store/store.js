@@ -2,6 +2,7 @@ import ls, {get,set} from "local-storage";
 export const  burgerstore ={
     state: {
         items: [],
+        other : [],
         mobileMenu: {
             closed: true
         },
