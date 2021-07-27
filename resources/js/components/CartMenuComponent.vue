@@ -99,7 +99,7 @@ export default {
 
     getName(id) {
       let items = this.$store.state.items
-      return items.filter(el=>el.id==id).name
+      return  items.filter(el=>el.id==id)[0].name
     },
     getTotal(){
       if(this.orderItems.length > 0){

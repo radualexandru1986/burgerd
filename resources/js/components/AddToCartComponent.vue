@@ -59,22 +59,26 @@ export default {
     },
 
     getQuantity(){
-      let order = this.$store.state.orderItems.filter(el=>el.id == this.itemnumber)
-      console.log(order)
-      this.quantity = order.quantity
+      let order = this.$store.state.orderItems.filter(el=>el.id == this.itemnumber)[0]
+      if(order && order.quantity > 0) {
+        this.quantity = order.quantity
+      }else{
+        this.quantity = 1
+      }
+
     },
 
     addToCart(){
       this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price, isInCart:this.isInCart})
+
       this.$toast.success("Item Added", {
         position:'bottom-center',
         timeout:2000,
       });
     }
   },
-
   mounted() {
-   this.quantity = this.addQuantity
+    this.quantity = this.addQuantity
   }
 
 }
