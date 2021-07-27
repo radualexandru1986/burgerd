@@ -21,6 +21,7 @@ class CreateItemsTable extends Migration
             $table->integer('rating')->default(5);
             $table->text('description')->nullable();
             $table->text('recipe')->nullable();
+            $table->string('class')->nullable();
             $table->timestamps();
         });
     }

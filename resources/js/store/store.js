@@ -1,50 +1,26 @@
 import ls, {get,set} from "local-storage";
 export const  burgerstore ={
     state: {
-        assets: {
-            images : [
-                {
-                    id : '1',
-                    url: 'images/menu/TheTurk.png',
-                    itemName : 'The Turk'
-                },
-                {
-                    id : '2',
-                    url: 'images/menu/DoubleAnimal.png',
-                    itemName: 'Double Animal'
-                },
-                {
-                    id : '3',
-                    url: 'images/menu/VeganPrime.png',
-                    itemName: 'Vegan Prime'
-
-                },
-                {
-                    id : '4',
-                    url: 'images/menu/JuicyLucy.png',
-                    itemName: 'Juicy Lucy'
-                },
-                {
-                    id : '5',
-                    url: 'images/menu/HotDog.png',
-                    itemName: 'Hot Dog'
-                },
-                {
-                    id : '6',
-                    url: 'images/menu/salad.jpg',
-                    itemName: 'Chicken Salad'
-                },
-            ]
-        },
+        items: [],
         mobileMenu: {
             closed: true
         },
-        toast: {
-            closed: true
-        },
+        checkout:false,
         orderItems: []  //[{id:1234, quantity : 2}]
     },
     mutations: {
+
+        toCheckout(state){
+            state.checkout = true;
+        },
+
+        backToOrders(state) {
+          state.checkout = false;
+        },
+        bringDataToStore(state, payload) {
+            this.state.items = payload
+            console.log(this.state.items)
+        },
         increment (state) {
             state.orderTotal++
         },
@@ -54,7 +30,12 @@ export const  burgerstore ={
             //if the product has been added before we will just change the quantity
             if(item.length>0) {
                 let i = state.orderItems.indexOf(item[0]);
-                state.orderItems[i].quantity =  payload.quantity
+                if(payload.isInCart){
+                    state.orderItems[i].quantity = payload.quantity
+                }else{
+                    state.orderItems[i].quantity = Number(state.orderItems[i].quantity) + Number(payload.quantity)
+                }
+
             }else{
                 //if is the first time they add the product then we will push it to the list
                 state.orderItems.push(payload)

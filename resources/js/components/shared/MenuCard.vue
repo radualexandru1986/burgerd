@@ -5,11 +5,11 @@
         <button class="accordion-button" data-bs-toggle="collapse" :data-bs-target="`#id${id}`" aria-expanded="true" :aria-controls="id">
           <section class="row w-100">
             <div class="col-4 col-sm-4 p-0" >
-              <img :src="assets.url" class="img-fluid rounded" alt="...">
+              <img :src="item.photo" class="img-fluid rounded" alt="..." v-if="item">
             </div>
             <div class="col-8 col-sm-8" style="position: relative;">
               <div class="item-card-title text-left" >
-               <span class="big-title d-lg-flex justify-content-between">{{assets.itemName}} <strong>x {{quantity}}</strong> £ {{price}}</span>
+               <span class="big-title d-lg-flex justify-content-between">{{item.name}} <strong>x {{quantity}}</strong> £ {{price}}</span>
               </div>
               <div class="item-card-body px-1 py-4 d-flex flex-column flex-lg-row" >
                 <span class="item">
@@ -26,7 +26,7 @@
       <div :id="`id${id}`" class="accordion-collapse collapse" :aria-labelledby="`heading${id}`" data-bs-parent="#menu-card-example">
         <div class="accordion-body">
           This is the accordion body
-          <add-to-cart-component :itemnumber="id" :price="price" :buttonLabel="buttonLabel"></add-to-cart-component>
+          <add-to-cart-component :isInCart="true" :itemnumber="id" :price="price" :buttonLabel="buttonLabel" :addQuantity="quantity"></add-to-cart-component>
           <button class="btn border-1 border-danger delete-item w-100"  @click="removeItem()">
             <i class="bi bi-trash"></i> Remove Item
           </button>
@@ -52,6 +52,7 @@ export default {
   data(){
     return {
       loading:false,
+      item : {}
     }
   },
 
@@ -64,11 +65,9 @@ export default {
       });
     }
   },
-  computed:{
-    assets(){
-      let images = this.$store.state.assets.images;
-      return images.filter(el=>el.id==this.id)[0]
-    }
+  async created(){
+      let items =this.$store.state.items;
+      this.item = await items.filter(el=>el.id==this.id)[0]
   }
 }
 </script>

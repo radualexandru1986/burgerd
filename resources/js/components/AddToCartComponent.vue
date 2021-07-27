@@ -38,6 +38,10 @@ export default {
     addQuantity : {
       default : 1,
       type : Number
+    },
+    isInCart : {
+      default:false,
+      type : Boolean
     }
   },
   data(){
@@ -53,8 +57,15 @@ export default {
     decrementQuantity(){
       this.quantity > 1 ? this.quantity-- : ''
     },
+
+    getQuantity(){
+      let order = this.$store.state.orderItems.filter(el=>el.id == this.itemnumber)
+      console.log(order)
+      this.quantity = order.quantity
+    },
+
     addToCart(){
-      this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price})
+      this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price, isInCart:this.isInCart})
       this.$toast.success("Item Added", {
         position:'bottom-center',
         timeout:2000,
@@ -63,7 +74,7 @@ export default {
   },
 
   mounted() {
-    this.quantity = this.addQuantity;
+   this.quantity = this.addQuantity
   }
 
 }

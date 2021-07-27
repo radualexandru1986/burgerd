@@ -1,6 +1,6 @@
 <template>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" v-show="!orderItems.length > 0">
+    <div class="modal-dialog "  v-show="!orderItems.length > 0">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title display-4 text-center w-100" >Ups!!</h5>
@@ -15,16 +15,16 @@
       </div>
     </div>
 
-    <div class="modal-dialog modal-xl" v-show="orderItems.length > 0" >
-      <div class="modal-content">
+    <div class="modal-dialog" :class="{'modal-xl':!orderScreenOff}" v-show="orderItems.length > 0" >
+      <div class="modal-content overflow-hidden">
         <div class="modal-header border-0">
           <h5 class="modal-title display-4 text-center w-100" id="exampleModalLabel">Checkout</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div class="row">
+        <div class="modal-body ">
+          <div class="row" v-if="!orderScreenOff">
             <div class="accordion" id="menu-card-example">
-              <div class="row">
+              <div class="row" >
                 <div class="col-12 col-xl-7">
                   <menu-card v-for="(item, key) in orderItems"
                              v-bind:key="key"
@@ -53,15 +53,16 @@
                     </div>
                     <br>
                     <div class="summary-footer" >
-                      <button class="btn btn-dark w-100 btn-lg my-1">Go to checkout!</button>
+                      <button class="btn btn-dark w-100 btn-lg my-1" @click="toCheckout()">Go to checkout!</button>
                       <button class="btn btn-light border-1 border-danger w-100 btn-lg my-1" @click="resetOrder()">Reset Order</button>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
-
+          <checkout-screen v-if="orderScreenOff"></checkout-screen>
         </div>
       </div>
     </div>
@@ -77,18 +78,25 @@ export default {
   },
   data(){
     return {
-
     }
   },
   methods :{
     resetOrder(){
       ls.remove('orderItems')
       this.$store.commit('resetOrder')
+      this.$toast.success("All your items are gone.. ", {
+        position:'bottom-center',
+        timeout:4000,
+      });
+    },
+
+    toCheckout() {
+       this.$store.commit('toCheckout')
     },
 
     getName(id) {
-      let images = this.$store.state.assets.images;
-      return images.filter(el=>el.id==id)[0].itemName
+      let items = this.$store.state.items
+      return items.filter(el=>el.id==id).name
     },
     getTotal(){
       if(this.orderItems.length > 0){
@@ -104,6 +112,10 @@ export default {
     orderItems(){
       return this.$store.state.orderItems
     },
+
+    orderScreenOff(){
+      return this.$store.state.checkout;
+    }
   }
 }
 
@@ -117,4 +129,12 @@ export default {
 button{
   font-family: 'Roboto', sans-serif;
 }
+
+.order-screen-off {
+  position:absolute;
+  margin-left: -1000px;
+  transition-duration: 300ms;
+  visibility: hidden;
+}
+
 </style>
