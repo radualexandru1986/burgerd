@@ -3,6 +3,6 @@
         Our Products
     </div>
     <div class="col-12 mx-auto">
-        @include('layouts.sub-menu')
+{{--        @include('layouts.sub-menu')--}}
     </div>
 </div>

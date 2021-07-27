@@ -23,6 +23,9 @@ Vue.component('checkout-screen', require('./components/shared/CheckoutScreenComp
 const app = new Vue({
     el: '#app',
     store:store,
+   data : {
+     filtered : 'burgers'
+   },
     components :{
 
     },
