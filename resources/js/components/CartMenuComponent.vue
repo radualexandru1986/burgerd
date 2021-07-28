@@ -28,7 +28,7 @@
                 <div class="col-12 col-xl-7">
                   <menu-card v-for="(item, key) in orderItems"
                              v-bind:key="key"
-                             v-bind:id="item.id"
+                             v-bind:itemId="item.id"
                              v-bind:quantity="item.quantity"
                              v-bind:price="item.perItem"
                              v-bind:button-label="'Update Order'"

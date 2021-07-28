@@ -57,7 +57,9 @@ export const  burgerstore ={
         },
 
         removeItemFromOrder(state, payload) {
-            state.orderItems = [...state.orderItems.filter(el => el.id !== payload.id)]
+            console.log(payload)
+            let items = state.orderItems.filter(el => el.id !== payload.id)
+            state.orderItems = [...items]
             ls.set('orderItems', state.orderItems);
         }
     }

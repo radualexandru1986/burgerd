@@ -1,8 +1,8 @@
 <template>
   <div class="col-12  menu-card">
     <div class="accordion-item">
-      <h2 class="accordion-header" :id="`heading${id}`">
-        <button class="accordion-button" data-bs-toggle="collapse" :data-bs-target="`#id${id}`" aria-expanded="true" :aria-controls="id">
+      <h2 class="accordion-header" :id="`heading${itemId}`">
+        <button class="accordion-button" data-bs-toggle="collapse" :data-bs-target="`#id${itemId}`" aria-expanded="true" :aria-controls="itemId">
           <section class="row w-100">
             <div class="col-4 col-sm-4 p-0" >
               <img :src="item.photo" class="img-fluid rounded" alt="..." v-if="item">
@@ -23,10 +23,10 @@
           </section>
         </button>
       </h2>
-      <div :id="`id${id}`" class="accordion-collapse collapse" :aria-labelledby="`heading${id}`" data-bs-parent="#menu-card-example">
+      <div :id="`id${itemId}`" class="accordion-collapse collapse" :aria-labelledby="`heading${itemId}`" data-bs-parent="#menu-card-example">
         <div class="accordion-body">
           This is the accordion body
-          <add-to-cart-component :isInCart="true" :itemnumber="id" :price="price" :buttonLabel="buttonLabel" :addQuantity="quantity"></add-to-cart-component>
+          <add-to-cart-component :isInCart="true" :itemnumber="itemId" :price="price" :buttonLabel="buttonLabel" :addQuantity="quantity"></add-to-cart-component>
           <button class="btn border-1 border-danger delete-item w-100"  @click="removeItem()">
             <i class="bi bi-trash"></i> Remove Item
           </button>
@@ -40,7 +40,7 @@
 export default {
   name : 'MenuCard',
   props : {
-    id : Number,
+    itemId : Number,
     quantity : Number,
     price : Number,
     buttonLabel : {
@@ -52,22 +52,24 @@ export default {
   data(){
     return {
       loading:false,
-      item : {}
     }
   },
 
   methods :{
     removeItem(){
-      this.$store.commit('removeItemFromOrder', {id:this.id})
+      this.$store.commit('removeItemFromOrder', {id:this.itemId})
       this.$toast.warning("Item removed", {
         position:'bottom-center',
         timeout:2000,
       });
     }
   },
-  async created(){
+  computed: {
+    item(){
       let items =this.$store.state.items;
-      this.item = await items.filter(el=>el.id==this.id)[0]
+     return items.filter(el=>el.id==this.itemId)[0]
+    }
+
   }
 }
 </script>
