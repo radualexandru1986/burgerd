@@ -27,7 +27,7 @@
     </div>
     <div class="col-12">
       <div class="col-12  mx-auto text-center my-1">
-        <button class="btn w-100 btn-dark btn-lg cxc" @click="test()"> Verify Order !</button>
+        <button class="btn w-100 btn-dark btn-lg cxc" @click="sendOrder()"> Verify Order !</button>
       </div>
       <div class="col-12  mx-auto text-center my-1 ">
         <button class="btn w-100  border-1 border-dark btn-lg" @click="backToOrders()"> Back To Orders Screen</button>
@@ -57,8 +57,9 @@ export default {
       return this.address[field].length > len
     },
     sendOrder() {
+      alert('button pressed')
       axios.post('/orders/create', this.address).then(response=>{
-        console.log(response)
+        alert('the message has been sent');
       })
     },
     test(){
