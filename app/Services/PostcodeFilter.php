@@ -167,7 +167,7 @@
 		 */
 		public function inRange($postcode): bool
 		{
-			return  in_array($postcode, $this->data);
+			return  in_array(strtoupper($postcode), $this->data);
 		}
 		
 	}

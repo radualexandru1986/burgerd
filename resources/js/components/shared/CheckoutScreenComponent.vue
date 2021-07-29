@@ -57,7 +57,6 @@ export default {
       return this.address[field].length > len
     },
     sendOrder() {
-      alert('button pressed')
       axios.post('/orders/create', this.address).then(response=>{
         alert('the message has been sent');
       })
