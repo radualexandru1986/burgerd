@@ -27,7 +27,7 @@
     </div>
     <div class="col-12">
       <div class="col-12  mx-auto text-center my-1">
-        <button class="btn w-100 btn-dark btn-lg" @click="sendOrder()"> Verify Order !</button>
+        <button class="btn w-100 btn-dark btn-lg cxc" @click="test()"> Verify Order !</button>
       </div>
       <div class="col-12  mx-auto text-center my-1 ">
         <button class="btn w-100  border-1 border-dark btn-lg" @click="backToOrders()"> Back To Orders Screen</button>
@@ -60,6 +60,9 @@ export default {
       axios.post('/orders/create', this.address).then(response=>{
         console.log(response)
       })
+    },
+    test(){
+      alert('pressed');
     }
 
   },
@@ -67,9 +70,6 @@ export default {
     isCheckoutOn(){
       return this.$store.state.checkout
     },
-  },
-  created(){
-
   }
 }
 </script>
@@ -91,5 +91,9 @@ export default {
 .checkout-form{
   font-family: Roboto, sans-serif;
   color:black;
+}
+
+.cxc:hover{
+  background-color:#ff3d00;
 }
 </style>
