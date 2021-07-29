@@ -5273,7 +5273,7 @@ __webpack_require__.r(__webpack_exports__);
         street: '',
         number: '',
         postcode: '',
-        telephone: ''
+        phone: ''
       }
     };
   },
@@ -5284,6 +5284,11 @@ __webpack_require__.r(__webpack_exports__);
     isValid: function isValid(field) {
       var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
       return this.address[field].length > len;
+    },
+    sendOrder: function sendOrder() {
+      axios.post('/orders/create', this.address).then(function (response) {
+        console.log(response);
+      });
     }
   },
   computed: {
@@ -30177,20 +30182,20 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.address.telephone,
-                expression: "address.telephone"
+                value: _vm.address.phone,
+                expression: "address.phone"
               }
             ],
             staticClass: "form-control form-control-lg ",
-            class: { "border-danger": !_vm.isValid("telephone", 10) },
+            class: { "border-danger": !_vm.isValid("phone", 10) },
             attrs: { type: "text", id: "mobile" },
-            domProps: { value: _vm.address.telephone },
+            domProps: { value: _vm.address.phone },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.$set(_vm.address, "telephone", $event.target.value)
+                _vm.$set(_vm.address, "phone", $event.target.value)
               }
             }
           }),
@@ -30203,7 +30208,20 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-12" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "col-12  mx-auto text-center my-1" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn w-100 btn-dark btn-lg",
+            on: {
+              click: function($event) {
+                return _vm.sendOrder()
+              }
+            }
+          },
+          [_vm._v(" Verify Order !")]
+        )
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-12  mx-auto text-center my-1 " }, [
         _c(
@@ -30222,18 +30240,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12  mx-auto text-center my-1" }, [
-      _c("button", { staticClass: "btn w-100 btn-dark btn-lg" }, [
-        _vm._v(" Verify Order !")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -13,3 +13,5 @@ Route::get('/filter-postcode/{postcode?}', function($postcode, PostcodeFilter $p
 Route::get('/contact', function () {
     return view('layouts.contact');
 })->name('contact');
+
+Route::post('/orders/create', [\App\Http\Controllers\OrderController::class, 'collectInfo']);

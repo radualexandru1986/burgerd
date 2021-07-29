@@ -20,14 +20,14 @@
 
         <div class="col-md-12">
           <label for="mobile" class="form-label">Mobile Phone *</label>
-          <input type="text" class="form-control form-control-lg " id="mobile" v-model="address.telephone" :class="{'border-danger' : !isValid('telephone', 10)}">
+          <input type="text" class="form-control form-control-lg " id="mobile" v-model="address.phone" :class="{'border-danger' : !isValid('phone', 10)}">
           <span class="text-muted"> We will send a message to confirm the order</span>
         </div>
       </form>
     </div>
     <div class="col-12">
       <div class="col-12  mx-auto text-center my-1">
-        <button class="btn w-100 btn-dark btn-lg"> Verify Order !</button>
+        <button class="btn w-100 btn-dark btn-lg" @click="sendOrder()"> Verify Order !</button>
       </div>
       <div class="col-12  mx-auto text-center my-1 ">
         <button class="btn w-100  border-1 border-dark btn-lg" @click="backToOrders()"> Back To Orders Screen</button>
@@ -45,7 +45,7 @@ export default {
         street :'',
         number : '',
         postcode : '',
-        telephone : ''
+        phone : ''
       }
     }
   },
@@ -56,6 +56,11 @@ export default {
     isValid(field, len=3) {
       return this.address[field].length > len
     },
+    sendOrder() {
+      axios.post('/orders/create', this.address).then(response=>{
+        console.log(response)
+      })
+    }
 
   },
   computed:{
