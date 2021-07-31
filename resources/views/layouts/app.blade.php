@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Jona`s Burgers</title>
+        <title>Emily's Burgers</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="shortcut icon" type="image/jpg" href="{{asset('burger.png')}}"/>
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 

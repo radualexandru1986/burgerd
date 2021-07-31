@@ -82,13 +82,12 @@ export default {
     },
 
     sendConfirmation(){
-      axios.post('/orders/confirm', {
-        verification:this.confirmation.code
-      }).then(response=>{
-        this.$store.commit('showScreen', {actual:'checkoutScreen', next:'successScreen'})
-      })
+      axios.post('/orders/confirm', { verification:this.confirmation.code })
+      .then(response=>{
+          this.$store.commit('showScreen', {actual:'checkoutScreen', next:'successScreen'})
+        })
       .catch(error=>{
-        console.log(error.response)
+        alert(error.response.data.message);
       })
     },
 
@@ -111,7 +110,7 @@ export default {
             this.$store.commit('saveConfirmationState', this.confirmation)
             })
           .catch((error)=>{
-              console.log(error.response.status)
+
               if(error.response.status===500){
                 alert('We don`t deliver to this postcode');
               }
