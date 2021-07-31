@@ -98,9 +98,9 @@ export default {
        this.$store.commit('showScreen', {actual:'orderScreen', next:'checkoutScreen'})
     },
 
-    getName(id) {
+     getName(id) {
       let items = this.$store.state.items
-      return  items.filter(el=>el.id==id)[0].name
+      return items.filter(el=>el.id==id)[0].name
     },
     getTotal(){
       if(this.orderItems.length > 0){
@@ -128,6 +128,10 @@ export default {
     successScreen(){
       return this.$store.state.successScreen;
     }
+  },
+
+  beforeMount(){
+    this.$store.commit('bringDataToStore', ls.get('items'))
   }
 }
 

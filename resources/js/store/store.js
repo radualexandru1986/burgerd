@@ -50,7 +50,6 @@ export const  burgerstore ={
         },
         bringDataToStore(state, payload) {
             this.state.items = payload
-            console.log(this.state.items)
         },
         increment (state) {
             state.orderTotal++

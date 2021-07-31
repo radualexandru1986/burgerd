@@ -61,11 +61,7 @@
             <div class=" d-sm-flex col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">
                 @include('shared.cart')
             </div>
-            <div class="d-none col-md-2 d-md-flex d-xl-none burger-menu-button">
-                <button class="x-button " style="font-size:30px;" onclick="toggleMenuState()">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </button>
-            </div>
+
         </div>
     </div>
 </div>
