@@ -2,6 +2,9 @@
 	namespace App\Services;
 	
 	
+	use App\Exceptions\PostCodeException;
+	use Illuminate\Validation\ValidationException;
+	
 	class PostcodeFilter
 	{
 		protected $data = ["NR58BJ",
@@ -164,10 +167,14 @@
 		 *
 		 * @param $postcode
 		 * @return bool
+		 * @throws \Exception
 		 */
 		public function inRange($postcode): bool
 		{
-			return  in_array(strtoupper($postcode), $this->data);
+			if( ! in_array(strtoupper($postcode), $this->data)) {
+				throw (new \Exception('The postcode is out of range', 417)) ;
+			}
+			return in_array(strtoupper($postcode), $this->data);
 		}
 		
 	}

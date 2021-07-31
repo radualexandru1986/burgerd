@@ -13,8 +13,18 @@ class Verification extends Model
     protected $fillable = ['customer_id', 'verification_code', 'verified'];
     
     //Relations
+	/**
+	 * @var mixed
+	 */
+	
 	public function customer()
 	{
 		return $this->belongsTo(Customer::class);
 	}
+	
+	//Casts
+	protected $casts = [
+		'created_at' => 'datetime',
+		'updated_at' => 'datetime'
+	];
 }

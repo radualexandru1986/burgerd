@@ -60,6 +60,9 @@ const app = new Vue({
         if(ls.get('orderItems')){
             this.$store.commit('resurrectOrders', ls.get('orderItems'))
         }
+        if(ls.get('components')){
+            this.$store.commit('resurrectComponentsState', ls.get('components'))
+        }
     },
 
 });

@@ -41,6 +41,7 @@ class SendSMS
 	 */
 	public function sendConfirmationCode($receiver, $code)
 	{
+		die();
 		$receiver = $this->phoneValidator($receiver);
 		$this->twilio->messages->create(
 			$receiver, ['from' => 'Emys-Verify', 'body' => 'Hi there, Your code is : ' . $code]

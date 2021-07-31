@@ -15,3 +15,4 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::post('/orders/create', [\App\Http\Controllers\OrderController::class, 'collectInfo']);
+Route::post('/orders/confirm', [\App\Http\Controllers\OrderController::class, 'confirmOrder']);
