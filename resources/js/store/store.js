@@ -44,10 +44,6 @@ export const  burgerstore ={
         checkoutLoading(state) {
             this.state.components.checkout.loading = true;
         },
-
-        backToOrders(state) {
-          state.checkout = false;
-        },
         bringDataToStore(state, payload) {
             this.state.items = payload
         },

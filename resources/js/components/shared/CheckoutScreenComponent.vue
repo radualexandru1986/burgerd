@@ -74,7 +74,7 @@ export default {
       window.location.reload()
     },
     backToOrders(){
-      this.$store.commit('backToOrders')
+      this.$store.commit('showScreen', {actual:'checkoutScreen', next:'orderScreen'})
     },
     isValid(field, min, max) {
       let elLength = this.address[field].trim().length;
