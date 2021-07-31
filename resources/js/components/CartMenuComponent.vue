@@ -1,5 +1,5 @@
 <template>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog "  v-show="!orderItems.length > 0">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,14 +15,14 @@
       </div>
     </div>
 
-    <div class="modal-dialog" :class="{'modal-xl':!orderScreenOff}" v-show="orderItems.length > 0" >
+    <div class="modal-dialog" :class="{'modal-xl':orderScreen}" v-show="orderItems.length > 0" >
       <div class="modal-content overflow-hidden">
-        <div class="modal-header border-0">
+        <div class="modal-header border-0" v-show="!successScreen">
           <h5 class="modal-title display-4 text-center w-100" id="exampleModalLabel">Checkout</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body ">
-          <div class="row" v-if="!orderScreenOff">
+          <div class="row" v-if="orderScreen">
             <div class="accordion" id="menu-card-example">
               <div class="row" >
                 <div class="col-12 col-xl-7">
@@ -53,7 +53,7 @@
                     </div>
                     <br>
                     <div class="summary-footer" >
-                      <button class="btn btn-dark w-100 btn-lg my-1" @click="toCheckout()">Go to checkout!</button>
+                      <button class="btn btn-dark w-100 btn-lg my-1" @click="showCheckout()">Go to checkout!</button>
                       <button class="btn btn-light border-1 border-danger w-100 btn-lg my-1" @click="resetOrder()">Reset Order</button>
                     </div>
                   </div>
@@ -62,7 +62,8 @@
 
             </div>
           </div>
-          <checkout-screen v-if="orderScreenOff"></checkout-screen>
+          <checkout-screen v-if="checkoutScreen"></checkout-screen>
+          <order-success   v-if="successScreen"></order-success>
         </div>
       </div>
     </div>
@@ -83,7 +84,7 @@ export default {
   methods :{
     resetOrder(){
       if(confirm('Are you sure you want to delete everything ?? ')){
-        ls.remove('orderItems')
+        this.$store.commit('clearMemory')
         this.$store.commit('resetOrder')
         this.$toast.success("All your items are gone.. ", {
           position:'bottom-center',
@@ -93,8 +94,8 @@ export default {
 
     },
 
-    toCheckout() {
-       this.$store.commit('toCheckout')
+    showCheckout() {
+       this.$store.commit('showScreen', {actual:'orderScreen', next:'checkoutScreen'})
     },
 
     getName(id) {
@@ -116,8 +117,16 @@ export default {
       return this.$store.state.orderItems
     },
 
-    orderScreenOff(){
-      return this.$store.state.checkout;
+    orderScreen(){
+      return this.$store.state.orderScreen;
+   },
+
+    checkoutScreen(){
+      return this.$store.state.checkoutScreen;
+   },
+
+    successScreen(){
+      return this.$store.state.successScreen;
     }
   }
 }

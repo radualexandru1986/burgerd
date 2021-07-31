@@ -27,14 +27,14 @@
                  :class="{'border-success' : isValid('phone', 10, 11), 'border-danger':!isValid('phone', 10, 11)}" :disabled="formDisabled">
           <span class="text-muted"> We will send a message to confirm the order</span>
         </div>
-
-        <div class="col-md-12" v-show="confirmation.show">
-          <label for="mobile" class="form-label"><strong>Confirmation</strong></label>
-          <input type="text" class="form-control form-control-lg p-3 text-center" id="confirmation" v-model="confirmation.code">
-          <span class="text-muted">Please insert the code you received via SMS </span>
-          <button class="btn w-100 btn-dark btn-lg cxc p-3" > Send Code </button>
-        </div>
       </form>
+      <div class="col-md-12" v-show="confirmation.show">
+        <label for="mobile" class="form-label"><strong>Confirmation</strong></label>
+        <input type="text" class="form-control form-control-lg p-3 text-center" id="confirmation" v-model="confirmation.code">
+        <span class="text-muted">Please insert the code you received via SMS </span>
+        <button class="btn w-100 btn-dark btn-lg cxc p-3" @click="sendConfirmation()"> Send Code </button>
+        <button class="btn w-100 border-danger btn-lg mt-2" @click="resetOrder()"> Reset Order </button>
+      </div>
     </div>
     <div class="col-12" v-show="!buttonState.disabled">
       <div class="col-12  mx-auto text-center my-1">
@@ -69,6 +69,10 @@ export default {
     }
   },
   methods:{
+    resetOrder(){
+      this.$store.commit('clearMemory');
+      window.location.reload()
+    },
     backToOrders(){
       this.$store.commit('backToOrders')
     },
@@ -76,6 +80,18 @@ export default {
       let elLength = this.address[field].trim().length;
       return elLength >= min && elLength <= max
     },
+
+    sendConfirmation(){
+      axios.post('/orders/confirm', {
+        verification:this.confirmation.code
+      }).then(response=>{
+        this.$store.commit('showScreen', {actual:'checkoutScreen', next:'successScreen'})
+      })
+      .catch(error=>{
+        console.log(error.response)
+      })
+    },
+
     sendOrder() {
       //we will disable check button until another event occurs..
       this.$store.commit('disableCheckoutButton')
@@ -93,12 +109,15 @@ export default {
              //show the confirmation field
             this.confirmation.show=true;
             this.$store.commit('saveConfirmationState', this.confirmation)
-
-            //clear memory of orders and state
-            //this.$store.commit('clearMemory');
             })
           .catch((error)=>{
-              console.log(error)
+              console.log(error.response.status)
+              if(error.response.status===500){
+                alert('We don`t deliver to this postcode');
+              }
+              if(error.response.status===422) {
+                alert('Something is not right. Make sure you filled all the details')
+              }
               this.$store.commit('checkoutNotLoading')
               this.$store.commit('enableCheckoutButton')
             });

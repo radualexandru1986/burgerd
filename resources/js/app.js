@@ -19,6 +19,7 @@ Vue.component('toast', require('./components/shared/ToastComponent').default);
 Vue.component('loader', require('./components/shared/LoaderComponent').default);
 Vue.component('data-loader', require('./components/shared/DataLoaderComponent').default);
 Vue.component('checkout-screen', require('./components/shared/CheckoutScreenComponent').default);
+Vue.component('order-success', require('./components/shared/OrderSuccessComponent').default);
 
 const app = new Vue({
     el: '#app',

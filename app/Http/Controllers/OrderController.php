@@ -65,8 +65,9 @@ class OrderController extends Controller
 		]);
 		//generate a new random number
 		$code = (new CodeGenerator())->generateRandom();
+		
 		//send sms
-		//$sms->sendConfirmationCode($request->get('phone'), $code);
+		$sms->sendConfirmationCode($request->get('phone'), $code);
 		
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		Verification::create([
@@ -82,20 +83,29 @@ class OrderController extends Controller
 	 * @param Request $request
 	 * @param Verification $verification
 	 * @return string
+	 * @throws \Exception
 	 */
 	public function confirmOrder(Request $request, Verification $verification): string
 	{
+		//make sure the code passes validation
 		$request->validate([
 			'verification' => 'required|min:5|:max:5'
 		]);
 		
+		// check with the databse and see if the code exists
 		$code = $verification->where( 'verification_code', $request->get('verification') )
 							 ->whereDate( 'created_at',  Carbon::today() )
 			                 ->first();
-		if($code){
-			$code->verified = true;
-			$code->save();
+		if(empty($code)){
+			throw new \Exception('Please insert the correct code.', 501);
 		}
+		
+		if($code->verified){
+			throw new \Exception('This order is already verified.',502);
+		}
+		
+		$code->verified = true;
+		$code->save();
 		
 		return json_encode(['message'=>'The order is on its way!']);
 	}

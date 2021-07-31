@@ -27,18 +27,22 @@ export const  burgerstore ={
         mobileMenu: {
             closed: true
         },
-        checkout:false,
+        orderScreen:true,
+        checkoutScreen:false,
+        successScreen:false,
         orderItems: []  //[{id:1234, quantity : 2}]
     },
     mutations: {
+        //This shows the next screen
+        showScreen(state, payload = {}){
+            state[payload.actual] = false;
+            state[payload.next] = true;
+        },
         checkoutNotLoading(state) {
             this.state.components.checkout.loading = false;
         },
         checkoutLoading(state) {
             this.state.components.checkout.loading = true;
-        },
-        toCheckout(state){
-            state.checkout = true;
         },
 
         backToOrders(state) {
@@ -131,6 +135,9 @@ export const  burgerstore ={
             ls.set('components', state.components);
         },
 
+        resetComponents(state){
+            state.components = {}
+        },
         clearMemory() {
             ls.clear()
         }
