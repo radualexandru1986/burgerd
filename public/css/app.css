@@ -12795,13 +12795,13 @@ footer {
   text-decoration: none;
 }
 
-.accordion {
+.faq .accordion {
   font-family: Roboto, sans-serif;
 }
-.accordion .accordion-item {
+.faq .accordion .accordion-item {
   border: none;
 }
-.accordion .accordion-button {
+.faq .accordion .accordion-button {
   border: 4px solid black;
   border-radius: 30px;
 }

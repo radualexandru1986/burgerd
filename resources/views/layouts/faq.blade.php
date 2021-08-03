@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid faq">
     <div class="container-xxl bg-light  py-5" style="min-height: 75vh;">
         <div class="header-text">
             <h1 class="display-2 text-center"> F.A.Q.</h1>
+            <br>
         </div>
         <div class="accordion" id="faq">
             <div class="accordion-item my-2">
