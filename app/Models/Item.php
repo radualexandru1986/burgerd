@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     use HasFactory;
+    
+    protected $table = 'items';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name', 'photo', 'price', 'rating', 'description', 'recipe', 'class'];
+	
+	protected $casts = [
+		'recipe' => 'array',
+	];
 }

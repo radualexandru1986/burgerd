@@ -16,9 +16,24 @@
             <p class="card-text py-2" style="font-weight: lighter">
                {{$item->description}}
             </p>
-            <a class="btn  view-recipe-button">
-                <span class="view-recipe-button-text">View Recipe</span>
-            </a>
+            @if($item->recipe)
+                <div class="accordion" id="x{{$item->id}}" >
+                    <div class="accordion-item" style="border:none;">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class=" btn view-recipe-button" type="button" data-bs-toggle="collapse" data-bs-target="#xx{{$item->id}}" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="view-recipe-button-text">View Recipe</span>
+                            </button>
+                        </h2>
+                        <div id="xx{{$item->id}}" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#x{{$item->id}}">
+                            <div class="accordion-body">
+                                  @foreach($item->recipe as $ingredient)
+                                    <span class="text-capitalize">{{$ingredient}}</span>,
+                                  @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
             <add-to-cart-component :itemnumber={{$item->id}} :price={{$item->price}}></add-to-cart-component>
         </div>
     </div>

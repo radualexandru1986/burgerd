@@ -34,7 +34,7 @@ class OrderController extends Controller
 		SendSMS $sms
 	)
 	{
-		
+		return $request->all();
 		//validate the data
 		$requestData = $request->all();
 		$request->merge(['postcode' => str_replace(' ', '', $request->get('postcode'))]);

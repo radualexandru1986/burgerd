@@ -96,8 +96,9 @@ export default {
       this.$store.commit('disableCheckoutButton')
       this.$store.commit('checkoutLoading');
       //sending the data to the backend
-      axios.post('/orders/create', this.address)
+      axios.post('/orders/create', {...this.address, order:this.$store.state.orderItems})
           .then(response=>{
+            console.log(response)
             this.$store.commit('checkoutNotLoading');
               //disable checkout form
             this.$store.commit('disableCheckoutForm')
