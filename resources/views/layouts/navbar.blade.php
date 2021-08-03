@@ -55,7 +55,7 @@
             <div class="d-sm-none d-md-none d-xl-flex col-xl-6 menu">
                 <button class="x-button" onclick="window.location.href='/' ">Home</button>
                 <button class="x-button  x-special" onclick="window.location.href='/#menu_start' ">Our Menu</button>
-                <button class="x-button ">F.A.Q</button>
+                <button class="x-button " onclick="window.location.href='{{route('faq')}}'">F.A.Q</button>
                 <button class="x-button " onclick="window.location.href='{{route('contact')}}'">Contact</button>
             </div>
             <div class=" d-sm-flex col-md-3 d-lg-inline-flex align-items-center justify-content-center col-xl-2 cart">

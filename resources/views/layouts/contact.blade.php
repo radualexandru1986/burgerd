@@ -7,26 +7,33 @@
                     <div class="col-12 col-xl-5 mx-auto mb-5 mb-md-1">
                         <h1 class="display-4">Fill the form</h1>
                         <h1>It's easy..</h1>
-                        <form class="row g-3 mt-5 ">
+                        @if(\Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{\Session::get('success')}}
+                            </div>
+                        @else
+                            <form class="row g-3 mt-5" method="post" action="{{route('contact.store')}}">
+                            @csrf
                             <div class="col-12">
                                 <label for="inputZip" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="inputZip">
+                                <input type="text" class="form-control" id="inputZip" name='name'>
                             </div>
 
                             <div class="col-12">
                                 <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input type="email" class="form-control" id="inputEmail4" name="email">
                             </div>
 
                             <div class="col-12">
                                 <label for="textarea" class="form-label w-100">Your message</label>
-                                <textarea class="form-control w-100"  cols="10" rows="4" id="textarea"></textarea>
+                                <textarea class="form-control w-100"  cols="10" rows="4" id="textarea" name="message"></textarea>
                             </div>
 
                             <div class="col-12">
                                 <button type="submit" class="special-button btn-grad">Send Message</button>
                             </div>
                         </form>
+                        @endif
                     </div>
                     <div class="col-12 col-xl-6 right-column" >
                         <h1 class="display-4">or you can use </h1>
