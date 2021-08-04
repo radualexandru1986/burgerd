@@ -39,18 +39,31 @@
                         <h1 class="display-4">or you can use </h1>
                         <h1>..other ways</h1>
                         <div class="block-container mt-4">
-                            <div class="channel ">
-                                <img src="{{asset('images/contactpage/icons8-facebook-480@2x.png')}}" alt="">
-                            </div>
-                            <div class="channel ">
-                                <img src="{{asset('images/contactpage/icons8-facebook-messenger-480@2x.png')}}" alt="">
-                            </div>
-                            <div class="channel ">
-                                <img src="{{asset('images/contactpage/icons8-whatsapp-512@2x.png')}}" alt="">
-                            </div>
-                            <div class="channel ">
-                                <img src="{{asset('images/contactpage/telephone@2x.png')}}" alt="">
-                            </div>
+
+                            <a href="https://www.facebook.com/Emilys-Burgers-104529481888560">
+                                <div class="channel ">
+                                    <img src="{{asset('images/contactpage/icons8-facebook-480@2x.png')}}" alt="">
+                                </div>
+                            </a>
+
+                            <a href="http://m.me/EmilysBurgers">
+                                <div class="channel ">
+                                    <img src="{{asset('images/contactpage/icons8-facebook-messenger-480@2x.png')}}" alt="">
+                                </div>
+                            </a>
+
+                            <a href=" https://wa.me/+4407564005466?text=Hi%20there%2C%20I%20have%20a%20question..." >
+                                <div class="channel ">
+                                    <img src="{{asset('images/contactpage/icons8-whatsapp-512@2x.png')}}" alt="">
+                                </div>
+                            </a>
+
+                            <a href="tel:+4407564005466">
+                                <div class="channel ">
+                                    <img src="{{asset('images/contactpage/telephone@2x.png')}}" alt="">
+                                </div>
+                            </a>
+
                         </div>
 
                     </div>
