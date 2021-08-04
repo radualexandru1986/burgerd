@@ -17,7 +17,7 @@
                 <div id="ingredientsCollapse" class="accordion-collapse collapse show" aria-labelledby="ingredients" data-bs-parent="#faq">
                     <div class="accordion-body">
                         If you wish us not to include something in your order you can tell us at
-                        <strong> 07305436556 </strong>
+                        <a href="tel:+4407564005466">07564 005 466</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq">
                     <div class="accordion-body">
                         All allergens are included in the food descriptions/recipe. If you have further concerns about allergens, please contact us directly at
-                        <strong> 07305 436 556</strong>
+                        <a href="tel:+4407564005466">07564 005 466</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 </h2>
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faq">
                     <div class="accordion-body">
-                       If you wish to cancel an order you have to contact us directly at <strong>07305 436 556</strong>.
+                       If you wish to cancel an order you have to contact us directly at <a href="tel:+4407564005466">07564 005 466</a>.
                     </div>
                 </div>
             </div>
