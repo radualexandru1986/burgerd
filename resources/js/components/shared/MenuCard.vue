@@ -12,11 +12,8 @@
                <span class="big-title d-lg-flex justify-content-between">{{item.name}} <strong>x {{quantity}}</strong> £ {{price}}</span>
               </div>
               <div class="item-card-body px-1 py-4 d-flex flex-column flex-lg-row" >
-                <span class="item">
-                  Diet Coke
-                </span>
-                <span class="item">
-                  Mozarella Sticks
+                <span class="item" v-if="getTheDrink">
+                  {{ getTheDrink.name }}
                 </span>
               </div>
             </div>
@@ -25,7 +22,7 @@
       </h2>
       <div :id="`id${itemId}`" class="accordion-collapse collapse" :aria-labelledby="`heading${itemId}`" data-bs-parent="#menu-card-example">
         <div class="accordion-body">
-            <small-item></small-item>
+            <small-item v-if="item.class != 'sides' && item.class != 'beverages'" :itemid="itemId"></small-item>
           <add-to-cart-component :isInCart="true" :itemnumber="itemId" :price="price" :buttonLabel="buttonLabel" :addQuantity="quantity"></add-to-cart-component>
           <button class="btn border-1 border-danger delete-item w-100"  @click="removeItem()">
             <i class="bi bi-trash"></i> Remove Item
@@ -43,6 +40,7 @@ export default {
     itemId : Number,
     quantity : Number,
     price : Number,
+    drink : Number,
     buttonLabel : {
       default : 'Add To Order',
       type : String
@@ -62,9 +60,15 @@ export default {
         position:'bottom-center',
         timeout:2000,
       });
-    }
+    },
   },
   computed: {
+    getTheDrink(){
+      if(this.drink){
+        return this.$store.state.items.filter(el=>el.id == this.drink)[0]
+      }
+      return false;
+    },
     item(){
       let items =this.$store.state.items;
      return items.filter(el=>el.id==this.itemId)[0]

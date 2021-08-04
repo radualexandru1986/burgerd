@@ -31,6 +31,7 @@
                              v-bind:itemId="item.id"
                              v-bind:quantity="item.quantity"
                              v-bind:price="item.perItem"
+                             v-bind:drink="item.drink"
                              v-bind:button-label="'Update Order'"
                   />
                 </div>

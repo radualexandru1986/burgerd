@@ -65,16 +65,33 @@ export default {
       }else{
         this.quantity = 1
       }
-
     },
 
     addToCart(){
-      this.$store.commit('addItemsToOrder', {id:this.itemnumber , quantity: this.quantity, perItem : this.price, isInCart:this.isInCart})
-
+      this.$store.commit('addItemsToOrder', {
+        id:this.itemnumber ,
+        quantity: this.quantity,
+        perItem : this.price,
+        isInCart:this.isInCart,
+        ...this.defaultBeverage
+      })
       this.$toast.success("Item Added", {
         position:'bottom-center',
         timeout:2000,
       });
+    },
+  },
+  computed: {
+    defaultBeverage(){
+      let items = this.$store.state.items;
+      let isMenu = items.filter(el=>{
+        return el.id==this.itemnumber && (el.class == 'beverages' || el.class == 'sides')
+      }).length < 1
+      console.log(isMenu)
+      if(isMenu){
+        let beverage = items.filter(el=>el.class == 'beverages')[1]
+        return {drink : beverage.id};
+      }
     }
   },
   mounted() {

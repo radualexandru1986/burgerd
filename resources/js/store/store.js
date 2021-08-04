@@ -68,7 +68,9 @@ export const  burgerstore ={
             }
             ls.set('orderItems', state.orderItems);
         },
-
+        selectBeverage(state, payload={id:'', bevId:''}) {
+            this.state.orderItems.filter(el=>el.id==payload.id)[0].drink = payload.bevId
+        },
         resurrectOrders(state, payload) {
             state.orderItems = payload
         },
