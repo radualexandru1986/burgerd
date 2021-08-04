@@ -4,7 +4,7 @@
             <a href=" https://wa.me/+4407564005466?text=Hi%20there%2C%20I%20have%20a%20question..." >
                 <img class="mx-3" src="{{asset('images/whatsappFooter.png')}}" alt="whatsapp" width="35">
             </a>
-            <a href="https://www.facebook.com/Emilys-Burgers-104529481888560">
+            <a href="fb://profile/104529481888560">
                 <img class="mx-3" src="{{asset('images/facebook-circular-logo.png')}}" alt="facebook" width="35">
             </a>
             <a href="http://m.me/EmilysBurgers">
