@@ -25,7 +25,7 @@
       </h2>
       <div :id="`id${itemId}`" class="accordion-collapse collapse" :aria-labelledby="`heading${itemId}`" data-bs-parent="#menu-card-example">
         <div class="accordion-body">
-          This is the accordion body
+            <small-item></small-item>
           <add-to-cart-component :isInCart="true" :itemnumber="itemId" :price="price" :buttonLabel="buttonLabel" :addQuantity="quantity"></add-to-cart-component>
           <button class="btn border-1 border-danger delete-item w-100"  @click="removeItem()">
             <i class="bi bi-trash"></i> Remove Item
