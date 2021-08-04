@@ -20,7 +20,9 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/TheTurk.png',
 			'price' => 9.20,
 			'class' => 'burgers',
-			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'egg', 'bacon', 'pickles',  'sauce', 'ketchup'])
+			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'egg', 'bacon', 'pickles',  'sauce', 'ketchup']),
+			'description' => 'This burger can satisfy your taste buds within seconds of biting in.
+			 The egg is freshly cooked with the bacon and the beef, while the salad and the tomato bring a fresh taste creating an incredible bust of flavour.'
 		]);
 		
 		DB::table('items')->insert([
@@ -28,7 +30,8 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/DoubleAnimal.png',
 			'price' => 9.20,
 			'class' => 'burgers',
-			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'pickles', 'ketchup'])
+			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'pickles', 'ketchup']),
+			'description' => 'Double the taste or double nothing. Listen to your instincts and satisfy your animal hunger with this burger.'
 		]);
 		
 		DB::table('items')->insert([
@@ -36,15 +39,17 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/VeganPrime.png',
 			'price' => 8.10,
 			'class' => 'vegan',
-			'recipe'=> json_encode(['Bun', 'vegan', 'mayo', 'salad', 'tomato', 'vegan burger', 'pickles', 'ketchup'])
+			'recipe'=> json_encode(['Bun', 'vegan', 'mayo', 'salad', 'tomato', 'vegan burger', 'pickles', 'ketchup']),
+			'description' => 'Healthy, natural, fresh and tasty, no animal was injured during the making of this burger.'
 		]);
 		
 		DB::table('items')->insert([
-			'name' => 'Juicy Lucy',
+			'name' => 'Atomic Chicken',
 			'photo' => 'images/menu/JuicyLucy.png',
 			'price' => 7.50,
 			'class' => 'burgers',
-			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce'])
+			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce']),
+			'description' => "Shakespeare didn't eat chicken burgers, he was too caught up with Ham-let."
 		]);
 		
 		DB::table('items')->insert([
@@ -52,7 +57,8 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/HotDog.png',
 			'price' => 7.50,
 			'class' => 'burgers',
-			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce'])
+			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce']),
+			'description' => 'This one is a bit more unique, it’s not your basic simple hot dog. By combining different fresh ingredients, special cooked red onions and high quality hot dog sausages, we created something full of rich flavour that let’s you wanting more.'
 		]);
 		
 		DB::table('items')->insert([
@@ -60,7 +66,8 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/salad.jpg',
 			'price' => 7.50,
 			'class' => 'salad',
-			'recipe'=> json_encode(['salad', 'onion', 'tomatoes', 'cucumber', 'chicken breast', 'salad cream'])
+			'recipe'=> json_encode(['salad', 'onion', 'tomatoes', 'cucumber', 'chicken breast', 'salad cream']),
+			'description' => 'If you crave meat, but you care about your diet, this one is for you. Made with fresh vegetables and good quality chicken breast, our salad is perfect for a light delicious meal.'
 		]);
 		
 		DB::table('items')->insert([

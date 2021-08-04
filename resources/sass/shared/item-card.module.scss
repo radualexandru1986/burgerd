@@ -8,15 +8,18 @@
         font-size:20px;
     }
     .card-text{
-        height: 70px;
-        font-family: 'Lato', sans-serif;
-        font-weight: 600!important;
+        height : 120px;
+        font-family: 'Roboto Light', sans-serif;
+        @media only screen and (max-width: 576px){
+            height: auto;
+        }
     }
     .view-recipe-button-text {
         font-family: 'Lato', sans-serif;
     }
     .view-recipe-button {
         color:purple;
+        border:1px solid #ff3d00;
         &:hover{
             background-color:#ff3d00;
             color:white;

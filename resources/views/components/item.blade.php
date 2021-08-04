@@ -15,7 +15,9 @@
             <h4 class="card-title pl-2">{{$item->name}}</h4>
             <p class="card-text py-2" style="font-weight: lighter">
                {{$item->description}}
+            <hr>
             </p>
+
             @if($item->recipe)
                 <div class="accordion" id="x{{$item->id}}" >
                     <div class="accordion-item" style="border:none;">
