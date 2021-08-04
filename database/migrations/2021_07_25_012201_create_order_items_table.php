@@ -17,10 +17,10 @@ class CreateOrderItemsTable extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id');
-            
             $table->unsignedBigInteger('item_id');
-            $table->integer('quantity')->default(1);
-            $table->text('comments')->nullable();
+			$table->unsignedBigInteger('drink')->nullable();
+			$table->integer('quantity')->default(1);
+			$table->text('comments')->nullable();
             $table->timestamps();
         });
     }

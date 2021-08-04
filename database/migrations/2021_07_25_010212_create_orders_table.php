@@ -15,10 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('customer_id');
             $table->float('total');
-            $table->string('paymentMethod')->default('cash');
+            $table->string('payment_method')->default('cash');
             $table->string('comments')->nullable();
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

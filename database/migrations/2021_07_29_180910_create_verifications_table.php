@@ -15,8 +15,9 @@ class CreateVerificationsTable extends Migration
     {
         Schema::create('verifications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
-            $table->string('verification_code');
+			$table->unsignedBigInteger('customer_id');
+			$table->unsignedBigInteger('order_id');
+			$table->string('verification_code');
             $table->boolean('verified')->default(false);
             $table->timestamps();
         });

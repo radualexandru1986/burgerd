@@ -57,7 +57,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/HotDog.png',
 			'price' => 7.50,
 			'class' => 'burgers',
-			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce']),
+			'recipe'=> json_encode(['bun', 'hot', 'dog', 'sausage', 'salad', 'tomato', 'caramelized onion', 'bacon', 'mustard', 'ketchup']),
 			'description' => 'This one is a bit more unique, it’s not your basic simple hot dog. By combining different fresh ingredients, special cooked red onions and high quality hot dog sausages, we created something full of rich flavour that let’s you wanting more.'
 		]);
 		

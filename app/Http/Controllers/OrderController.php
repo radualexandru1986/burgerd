@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Exceptions\PostCodeException;
 use App\Models\Address;
 use App\Models\Customer;
+use App\Models\Order;
+use App\Models\OrderItems;
 use App\Models\Verification;
 use App\Services\CodeGenerator;
 use App\Services\PostcodeFilter;
@@ -34,7 +36,7 @@ class OrderController extends Controller
 		SendSMS $sms
 	)
 	{
-		return $request->all();
+		$orderRequest = $request->get('order');
 		//validate the data
 		$requestData = $request->all();
 		$request->merge(['postcode' => str_replace(' ', '', $request->get('postcode'))]);
@@ -63,18 +65,41 @@ class OrderController extends Controller
 			'street' => $request->get('street'),
 			'number' =>$request->get('number')
 		]);
+		
+		//Create a new order
+		$order = Order::create([
+			'customer_id' => $newCustomer->id,
+			'total' => $this->calculateTotal($orderRequest),
+			'created_at' => Carbon::now(),
+			'updated_at' => Carbon::now(),
+		]);
 		//generate a new random number
 		$code = (new CodeGenerator())->generateRandom();
 		
 		//send sms
-		$sms->sendConfirmationCode($request->get('phone'), $code);
+		//$sms->sendConfirmationCode($request->get('phone'), $code);
 		
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		Verification::create([
 			'customer_id'=> $newCustomer->id,
+			'order_id' => $order->id,
 			'verification_code' => $code
 		]);
 		
+		
+		
+		//Add items to orderItems
+		foreach ($orderRequest as $item) {
+			OrderItems::create([
+				'order_id' => $order->id,
+				'item_id' => $item['id'],
+				'drink' => $item['drink'] ?: null,
+				'quantity'=>$item['quantity'],
+				'comments' =>  null,
+				'created_at' => Carbon::now(),
+				'updated_at' => Carbon::now()
+			]);
+		}
 		return 'OK';
 	}
 	
@@ -82,6 +107,7 @@ class OrderController extends Controller
 	 *
 	 * @param Request $request
 	 * @param Verification $verification
+	 * @param Order $order
 	 * @return string
 	 * @throws \Exception
 	 */
@@ -106,10 +132,36 @@ class OrderController extends Controller
 		
 		$code->verified = true;
 		$code->save();
+		//validate order
+		$this->validateOrder($code);
 		
 		return json_encode(['message'=>'The order is on its way!']);
 	}
 	
 	
+	/**
+	 * @param array $order
+	 * @return string
+	 */
+	protected function calculateTotal(Array $order=[]) :string
+	{
+		$total = 0;
+		foreach ($order as $item) {
+			$total = $total + ($item['quantity'] * $item['perItem']);
+		}
+		
+		return $total;
+	}
+	
+	/**
+	 * Validates the order
+	 * @param Verification $code
+	 */
+	protected function validateOrder(Verification $code): void
+	{
+		$order = $code->order;
+		$order->status = 'verified';
+		
+	}
 	
 }
