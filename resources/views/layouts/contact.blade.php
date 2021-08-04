@@ -40,7 +40,7 @@
                         <h1>..other ways</h1>
                         <div class="block-container mt-4">
 
-                            <a href="https://www.facebook.com/Emilys-Burgers-104529481888560">
+                            <a href="fb://profile/104529481888560">
                                 <div class="channel ">
                                     <img src="{{asset('images/contactpage/icons8-facebook-480@2x.png')}}" alt="">
                                 </div>
