@@ -4,7 +4,7 @@
         <div class="card-body">
             <div class="row mb-2 pl-2">
                 <div class="stars col-6" style="color:#ff7700">
-                    @for($i = 0; $i < $item->rated; $i++)
+                    @for($i = 0; $i < $item->rating; $i++)
                         <i class="bi bi-star-fill"></i>
                     @endfor
                 </div>
@@ -12,7 +12,7 @@
                     <span class="item-card-price" style="text-align: right">£{{$item->price}}</span>
                 </div>
             </div>
-            <h4 class="card-title pl-2">{{$item->name}}</h4>
+            <h4 class="card-title pl-2">{{$item->name}} (#{{$item->id}})</h4>
             <p class="card-text py-2" style="font-weight: lighter">
                {{$item->description}}
             </p>
