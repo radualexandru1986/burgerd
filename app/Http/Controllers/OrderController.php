@@ -131,9 +131,9 @@ class OrderController extends Controller
 			throw new \Exception('Please insert the correct code.', 501);
 		}
 		
-		if($code->verified){
-			throw new \Exception('This order is already verified.',502);
-		}
+//		if($code->verified){
+//			throw new \Exception('This order is already verified.',502);
+//		}
 		
 		$code->verified = true;
 		$code->save();
