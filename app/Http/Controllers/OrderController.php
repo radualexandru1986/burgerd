@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderValidated;
 use App\Exceptions\PostCodeException;
 use App\Models\Address;
 use App\Models\Customer;
@@ -17,7 +18,6 @@ use Twilio\Exceptions\TwilioException;
 
 class OrderController extends Controller
 {
-	
 	
 	/**
 	 * Collects the data from the form
@@ -49,7 +49,12 @@ class OrderController extends Controller
 		]);
 		
 		//validate the postcode
-		$postcodeFilter->inRange($request->get('postcode'));
+		try {
+			$postcodeFilter->inRange($request->get('postcode'));
+		}catch(PostCodeException $e){
+			return response()->json(['message'=>$e->getMessage()], 413);
+		}
+		
 		
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		//create a new customer with the phone number
@@ -161,7 +166,9 @@ class OrderController extends Controller
 	{
 		$order = $code->order;
 		$order->status = 'verified';
+		$order->save();
 		
+		OrderValidated::dispatch($order);
 	}
 	
 }

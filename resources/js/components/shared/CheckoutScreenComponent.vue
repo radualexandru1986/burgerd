@@ -111,13 +111,8 @@ export default {
             this.$store.commit('saveConfirmationState', this.confirmation)
             })
           .catch((error)=>{
-
-              if(error.response.status===500){
-                alert('We don`t deliver to this postcode');
-              }
-              if(error.response.status===422) {
-                alert('Something is not right. Make sure you filled all the details')
-              }
+              alert(error.response.data.message)
+                console.log(error.response)
               this.$store.commit('checkoutNotLoading')
               this.$store.commit('enableCheckoutButton')
             });

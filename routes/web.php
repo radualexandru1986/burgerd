@@ -19,3 +19,6 @@ Route::post('/contact/store', [\App\Http\Controllers\FeedbackController::class, 
 
 Route::post('/orders/create', [\App\Http\Controllers\OrderController::class, 'collectInfo']);
 Route::post('/orders/confirm', [\App\Http\Controllers\OrderController::class, 'confirmOrder']);
+Route::get('/t', function(){
+	throw new \App\Exceptions\PostCodeException(response()->json(['shit'=>'done', 'status'=>422]), 422);
+});

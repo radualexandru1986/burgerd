@@ -3,6 +3,7 @@
 	
 	
 	use App\Exceptions\PostCodeException;
+	use http\Client\Response;
 	use Illuminate\Validation\ValidationException;
 	
 	class PostcodeFilter
@@ -172,7 +173,7 @@
 		public function inRange($postcode): bool
 		{
 			if( ! in_array(strtoupper($postcode), $this->data)) {
-				throw (new \Exception('The postcode is out of range', 417)) ;
+				throw (new PostCodeException('We are sorry, but we don`t deliver to this postcode ! '));
 			}
 			return in_array(strtoupper($postcode), $this->data);
 		}
