@@ -82,7 +82,7 @@ class OrderController extends Controller
 		$code = (new CodeGenerator())->generateRandom();
 		
 		//send sms
-		//$sms->sendConfirmationCode($request->get('phone'), $code);
+		$sms->sendConfirmationCode($request->get('phone'), $code);
 		
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		Verification::create([
