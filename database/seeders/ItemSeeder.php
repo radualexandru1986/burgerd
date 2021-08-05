@@ -18,7 +18,7 @@ class ItemSeeder extends Seeder
 		DB::table('items')->insert([
 			'name' => 'The Turk',
 			'photo' => 'images/menu/TheTurk.png',
-			'price' => 9.20,
+			'price' => 8.50,
 			'class' => 'burgers',
 			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'egg', 'bacon', 'pickles',  'sauce', 'ketchup']),
 			'description' => 'This burger can satisfy your taste buds within seconds of biting in.
@@ -28,7 +28,7 @@ class ItemSeeder extends Seeder
 		DB::table('items')->insert([
 			'name' => 'Double Animal',
 			'photo' => 'images/menu/DoubleAnimal.png',
-			'price' => 9.20,
+			'price' => 9.50,
 			'class' => 'burgers',
 			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'pickles', 'ketchup']),
 			'description' => 'Double the taste or double nothing. Listen to your instincts and satisfy your animal hunger with this burger.'
@@ -37,7 +37,7 @@ class ItemSeeder extends Seeder
 		DB::table('items')->insert([
 			'name' => 'Vegan Prime',
 			'photo' => 'images/menu/VeganPrime.png',
-			'price' => 8.10,
+			'price' => 8.50,
 			'class' => 'vegan',
 			'recipe'=> json_encode(['Bun', 'vegan', 'mayo', 'salad', 'tomato', 'vegan burger', 'pickles', 'ketchup']),
 			'description' => 'Healthy, natural, fresh and tasty, no animal was injured during the making of this burger.'
@@ -46,7 +46,7 @@ class ItemSeeder extends Seeder
 		DB::table('items')->insert([
 			'name' => 'Atomic Chicken',
 			'photo' => 'images/menu/JuicyLucy.png',
-			'price' => 7.50,
+			'price' => 8.50,
 			'class' => 'burgers',
 			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce']),
 			'description' => "Shakespeare didn't eat chicken burgers, he was too caught up with Ham-let."
@@ -64,7 +64,7 @@ class ItemSeeder extends Seeder
 		DB::table('items')->insert([
 			'name' => 'Chicken Salad',
 			'photo' => 'images/menu/salad.jpg',
-			'price' => 7.50,
+			'price' => 5.00,
 			'class' => 'salad',
 			'recipe'=> json_encode(['salad', 'onion', 'tomatoes', 'cucumber', 'chicken breast', 'salad cream']),
 			'description' => 'If you crave meat, but you care about your diet, this one is for you. Made with fresh vegetables and good quality chicken breast, our salad is perfect for a light delicious meal.'
@@ -73,14 +73,14 @@ class ItemSeeder extends Seeder
 		DB::table('items')->insert([
 			'name' => 'Cheese Bits',
 			'photo' => 'images/menu/cheeseBits.jpg',
-			'price' => 4.00,
+			'price' => 3.00,
 			'class' => 'sides'
 		]);
 		
 		DB::table('items')->insert([
 			'name' => 'Onion Rings',
 			'photo' => 'images/menu/OnionRings.jpg',
-			'price' => 4.00,
+			'price' => 3.00,
 			'class' => 'sides'
 		]);
 		
