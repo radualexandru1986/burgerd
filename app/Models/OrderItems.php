@@ -39,7 +39,8 @@ class OrderItems extends Model
 		if (!$this->hasDrink()){
 			return false;
 		}
-		return $this->belongsTo(Item::class, 'drink');
+		
+		return Item::find($this->drink)->name;
 	}
 	
 	

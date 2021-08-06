@@ -41,6 +41,7 @@ class OrderController extends Controller
 		$requestData = $request->all();
 		$request->merge(['postcode' => str_replace(' ', '', $request->get('postcode'))]);
 		$request->merge( ['phone' => str_replace(' ', '', $request->get('phone'))]);
+		
 		$request->validate([
 			'street'=>'required|min:3',
 			'number'=>'required|min:1|max:5',
@@ -82,7 +83,7 @@ class OrderController extends Controller
 		$code = (new CodeGenerator())->generateRandom();
 		
 		//send sms
-		$sms->sendConfirmationCode($request->get('phone'), $code);
+//		/$sms->sendConfirmationCode($request->get('phone'), $code);
 		
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		Verification::create([
@@ -95,6 +96,9 @@ class OrderController extends Controller
 		
 		//Add items to orderItems
 		foreach ($orderRequest as $item) {
+			if(!isset($item['drink'])){
+				$item['drink'] = null;
+			}
 			OrderItems::create([
 				'order_id' => $order->id,
 				'item_id' => $item['id'],

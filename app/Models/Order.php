@@ -23,5 +23,11 @@ class Order extends Model
 		return $this->belongsTo(Customer::class, 'customer_id');
 	}
 	
-	
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function items()
+	{
+		return $this->hasMany(OrderItems::class, 'order_id');
+	}
 }

@@ -31,6 +31,6 @@ class SendNewOrderNotification
     public function handle(OrderValidated $event)
     {
     	$admin = User::first();
-		$admin->notify(new NewOrderNotification());
+		$admin->notify(new NewOrderNotification($event->order));
     }
 }

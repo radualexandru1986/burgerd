@@ -22,3 +22,9 @@ Route::post('/orders/confirm', [\App\Http\Controllers\OrderController::class, 'c
 Route::get('/t', function(){
 	throw new \App\Exceptions\PostCodeException(response()->json(['shit'=>'done', 'status'=>422]), 422);
 });
+//Preview email
+Route::get('/ordermail', function(){
+	$order = \App\Models\Order::find(2);
+	
+	return new \App\Mail\NewOrder($order);
+});

@@ -12,14 +12,16 @@ class NewOrderNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $order;
+	
+	/**
+	 * Create a new notification instance.
+	 *
+	 * @param $order
+	 */
+    public function __construct($order)
     {
-        //
+        $this->order = $order;
     }
 
     /**
@@ -41,7 +43,7 @@ class NewOrderNotification extends Notification implements ShouldQueue
 	 */
     public function toMail($notifiable): NewOrder
 	{
-        return (new NewOrder())->to($notifiable->email);
+        return (new NewOrder($this->order))->to($notifiable->email);
     }
 
     /**
