@@ -74,26 +74,29 @@ class ItemSeeder extends Seeder
 			'name' => 'Cheese Bits',
 			'photo' => 'images/menu/cheeseBits.jpg',
 			'price' => 3.00,
-			'class' => 'sides'
+			'class' => 'sides',
+			'description' => '	Treat yourself with rewards of cheese balls that melt in your mouth.'
 		]);
 		
 		DB::table('items')->insert([
 			'name' => 'Onion Rings',
 			'photo' => 'images/menu/OnionRings.jpg',
 			'price' => 3.00,
-			'class' => 'sides'
+			'class' => 'sides',
+			'description'=>'Delicious circles of fried onion ring.'
 		]);
 		
 		DB::table('items')->insert([
 			'name' => 'Mozzarella Sticks',
 			'photo' => 'images/menu/MozzarellaSticks.jpg',
 			'price' => 4.00,
-			'class' => 'sides'
+			'class' => 'sides',
+			'description' => '	Melted hot mozzarella cheese, covered in a fried crispy crust.'
 		]);
 		
 		DB::table('items')->insert([
-			'name' => 'Potatoes',
-			'photo' => 'images/menu/MozzarellaSticks.jpg',
+			'name' => 'Fries',
+			'photo' => 'images/menu/Fries.jpg',
 			'price' => 2.00,
 			'class' => 'sides'
 		]);

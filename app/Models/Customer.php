@@ -33,4 +33,9 @@ class Customer extends Model
 	{
 		return $this->hasMany(Verification::class, 'customer_id');
 	}
+	
+	public function order()
+	{
+		return $this->hasMany(Order::class, 'customer_id');
+	}
 }

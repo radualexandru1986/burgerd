@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory
@@ -22,7 +23,12 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'customer_id' => 1,
+			'total' => rand(8, 20),
+			'payment_method' => 'cash',
+			'comments' => 'some comments',
+			'status' => 'processing',
+			'created_at' => Carbon::today()
         ];
     }
 }

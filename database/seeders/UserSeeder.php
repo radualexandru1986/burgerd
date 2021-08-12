@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
 			'name' => 'Allex',
 			'email' => 'radu.c.alexandru@gmail.com',
 			'email_verified_at' => now(),
-			'password' => Hash::make('120'),
+			'password' => Hash::make('pulamea123'),
 			'created_at' => now(),
 			'remember_token'=> '2134567890dfghjk',
 			'updated_at' => now()
