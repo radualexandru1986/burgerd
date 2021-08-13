@@ -102,6 +102,14 @@ class ItemSeeder extends Seeder
 		]);
 		
 		DB::table('items')->insert([
+			'name' => 'Chicken Nuggets',
+			'photo' => 'images/menu/ChickenNuggets.jpg',
+			'price' => 3.00,
+			'class' => 'sides',
+			'description'=> 'No caption needed. Just Chicken Nuggets!'
+		]);
+		
+		DB::table('items')->insert([
 			'name' => 'Coca Cola Diet',
 			'photo' => 'images/menu/CocaColaDiet.jpg',
 			'price' => 1,
