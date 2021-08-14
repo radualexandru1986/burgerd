@@ -19,10 +19,13 @@
 			->name('admin.dashboard')
 			->middleware('admin');
 		
-		Route::get('/admin/orders', [\App\Http\Controllers\admin\DashboardController::class, 'index'])
+		Route::get('/admin/orders', [\App\Http\Controllers\admin\OrdersController::class, 'index'])
 			->name('admin.orders')
 			->middleware('admin');
 		
+		Route::get('/admin/orders/{order_id}/finish', [\App\Http\Controllers\admin\OrdersController::class, 'finishOrder'])
+			->name('admin.orders.finish')
+			->middleware('admin');;
 	
 	//end of admin routes
 	

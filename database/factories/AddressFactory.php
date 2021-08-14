@@ -22,7 +22,9 @@ class AddressFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'postcode'=>$this->faker->postcode,
+			'street'=>$this->faker->streetName,
+			'number'=>$this->faker->numerify
         ];
     }
 }

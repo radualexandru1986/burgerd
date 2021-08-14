@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Address;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\OrderItems;
 use Illuminate\Database\Seeder;
 
 class CustomerSeeder extends Seeder
@@ -20,8 +22,10 @@ class CustomerSeeder extends Seeder
 //			->count(10)
 //			->create();
     	Customer::factory()
-			->has(Order::factory())
-			->count(10)
-			->create();
+			->has(Address::factory())
+			->has(
+				Order::factory()->has(
+					OrderItems::factory()->count(3), 'items')->count(10)
+			)->count(10)->create();
     }
 }

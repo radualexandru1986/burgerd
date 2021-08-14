@@ -27,8 +27,8 @@ class OrderFactory extends Factory
 			'total' => rand(8, 20),
 			'payment_method' => 'cash',
 			'comments' => 'some comments',
-			'status' => 'processing',
-			'created_at' => Carbon::today()
+			'status_id' => rand(2,6),
+			'created_at' => $this->faker->dateTimeThisMonth
         ];
     }
 }

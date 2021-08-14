@@ -8,6 +8,7 @@ use App\Models\Address;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderItems;
+use App\Models\OrderStatus;
 use App\Models\Verification;
 use App\Services\CodeGenerator;
 use App\Services\PostcodeFilter;
@@ -127,9 +128,9 @@ class OrderController extends Controller
 			'verification' => 'required|min:5|:max:5'
 		]);
 		
-		// check with the databse and see if the code exists
+		// check with the database and see if the code exists
 		$code = $verification->where( 'verification_code', $request->get('verification') )
-							 ->whereDate( 'created_at',  Carbon::today() )
+							 ->whereDate( 'created_at',  today() )
 			                 ->first();
 		if(empty($code)){
 			throw new \Exception('Please insert the correct code.', 501);
@@ -169,7 +170,7 @@ class OrderController extends Controller
 	protected function validateOrder(Verification $code): void
 	{
 		$order = $code->order;
-		$order->status = 'verified';
+		$order->status_id = OrderStatus::processing();
 		$order->save();
 		
 		OrderValidated::dispatch($order);

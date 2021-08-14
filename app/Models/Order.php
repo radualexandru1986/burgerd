@@ -11,7 +11,7 @@ class Order extends Model
     use HasFactory;
     
     protected $table = 'orders';
-    protected $fillable = ['customer_id', 'total', 'payment_method', 'comments', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['customer_id', 'total', 'payment_method', 'comments', 'status_id', 'created_at', 'updated_at'];
     
     //relations
 	
@@ -29,5 +29,29 @@ class Order extends Model
 	public function items()
 	{
 		return $this->hasMany(OrderItems::class, 'order_id');
+	}
+	
+	/**
+	 * getting the order status
+	 *
+	 * @return BelongsTo
+	 */
+	public function status()
+	{
+		return $this->belongsTo(OrderStatus::class, 'status_id' );
+	}
+	
+	/**
+	 * @var string[]
+	 */
+	protected $casts = [
+		'created_at'=> 'datetime'
+	];
+	
+	
+	public function finishOrder()
+	{
+		$this->status_id = OrderStatus::ready();
+		$this->save();
 	}
 }

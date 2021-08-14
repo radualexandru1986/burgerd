@@ -5,11 +5,11 @@
         </a>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li>
-                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <a href="{{route('admin.dashboard')}}"  class="nav-link px-0 align-middle">
                     <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
             </li>
             <li>
-                <a href="#" class="nav-link px-0 align-middle">
+                <a href="{{route('admin.orders')}}" class="nav-link px-0 align-middle">
                     <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
             </li>
             <li>
@@ -29,19 +29,13 @@
         <div class="dropdown pb-4">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                <span class="d-none d-sm-inline mx-1">loser</span>
+                <span class="d-none d-sm-inline mx-1">{{\Auth::user()->name}}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
                 <li>
                     <form action="{{route('logout')}}" method="post">
                         @csrf
-                        <input type="submit" value="Logout">
+                        <input class="btn bg-light m-0 h-100 w-100" type="submit" value="Logout">
                     </form>
                 </li>
             </ul>
