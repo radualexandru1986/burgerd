@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
 			$table->string('payment_method')->default('cash');
 			$table->string('comments')->nullable();
 			$table->float('total');
+			$table->boolean('customer_notified')->default(0);
 			$table->timestamps();
         });
     }

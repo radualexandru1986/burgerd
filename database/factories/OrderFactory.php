@@ -27,7 +27,7 @@ class OrderFactory extends Factory
 			'total' => rand(8, 20),
 			'payment_method' => 'cash',
 			'comments' => 'some comments',
-			'status_id' => rand(2,6),
+			'status_id' => rand(2,3),
 			'created_at' => $this->faker->dateTimeThisMonth
         ];
     }

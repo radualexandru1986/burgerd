@@ -70,13 +70,13 @@ class ItemSeeder extends Seeder
 			'description' => 'If you crave meat, but you care about your diet, this one is for you. Made with fresh vegetables and good quality chicken breast, our salad is perfect for a light delicious meal.'
 		]);
 		
-		DB::table('items')->insert([
-			'name' => 'Cheese Bits',
-			'photo' => 'images/menu/cheeseBits.jpg',
-			'price' => 3.00,
-			'class' => 'sides',
-			'description' => '	Treat yourself with rewards of cheese balls that melt in your mouth.'
-		]);
+//		DB::table('items')->insert([
+//			'name' => 'Cheese Bits',
+//			'photo' => 'images/menu/cheeseBits.jpg',
+//			'price' => 3.00,
+//			'class' => 'sides',
+//			'description' => '	Treat yourself with rewards of cheese balls that melt in your mouth.'
+//		]);
 		
 		DB::table('items')->insert([
 			'name' => 'Onion Rings',

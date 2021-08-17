@@ -4,8 +4,10 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Services\SendSMS;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Twilio\Exceptions\TwilioException;
 
 class OrdersController extends Controller
 {
@@ -21,10 +23,13 @@ class OrdersController extends Controller
 		$todayOrders = $order->whereDate('created_at', Carbon::today())->get();
 		$finishedOrders =$todayOrders->filter(function($order){
 			return $order->status->name == 'ready';
-		});;
+		})->sortby([['updated_at', 'desc']]);;
+		
 		$pendingOrders = $todayOrders->filter(function($order){
 			return $order->status->name == 'processing';
 		});
+		
+		
 		return view('auth.orders', ['orders'=>$todayOrders,'finishedOrders'=>$finishedOrders, 'pendingOrders'=>$pendingOrders]);
 	}
 	
@@ -32,10 +37,44 @@ class OrdersController extends Controller
 	/**
 	 * @param Order $order
 	 */
-	public function finishOrder($orderid , Order $order)
+	public function finishOrder($orderId , Order $order)
 	{
-		$order->findOrFail($orderid)->finishOrder();
+		$order->findOrFail($orderId)->finishOrder();
 		return redirect()->back();
+	}
+	
+	/**
+	 * @param $orderId
+	 * @param Order $order
+	 */
+	public function cancelOrder($orderId, Order $order)
+	{
+		$order->findOrFail($orderId)->cancelOrder();
+		return redirect()->back();
+	}
+	
+	/**
+	 * @param $orderId
+	 * @param Order $order
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function deleteOrder($orderId, Order $order)
+	{
+		$order->findOrFail($orderId)->delete();
+		return redirect()->back();
+	}
+	
+	
+	public function sendNotification($orderId , Request $request, SendSMS $sms, Order $order)
+	{
+		try {
+			$sms->custom($request->get('telephone'), $request->get('message'));
+			$order->find($orderId)->notifyCustomer();
+			return redirect()->back()->with(['success'=>'The customer has been notified !']);
+		}catch (TwilioException $e) {
+			return redirect()->back()->withErrors(['sms'=>'The phone number does not have the right format'.$request->get('telephone').$e->getMessage()]);
+		}
+		
 	}
 	
 	/**

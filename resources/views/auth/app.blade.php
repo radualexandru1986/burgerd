@@ -15,23 +15,21 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
 </head>
 <body >
-<div id="admin">
-    <div class="container-fluid p-0 m-0" style="font-family: Nunito">
-        <div class="row p-0 m-0">
-            @if(\Illuminate\Support\Facades\Auth::user())
-                <div class="col-auto col-xl-2 col-md-3 p-0">
-                    @include('auth.shared.sidenav')
-                </div>
-            @endif
-            <div class="col">
-                @yield('content')
+<div class="container-fluid p-0 m-0" style="font-family: Nunito">
+    <div class="row p-0 m-0">
+        @if(\Illuminate\Support\Facades\Auth::user())
+            <div class="col-auto col-xl-2 col-md-3 p-0">
+                @include('auth.shared.sidenav')
             </div>
+        @endif
+        <div class="col">
+            @yield('content')
         </div>
     </div>
-
 </div>
-
+@stack('head')
 </body>
 </html>

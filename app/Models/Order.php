@@ -11,7 +11,7 @@ class Order extends Model
     use HasFactory;
     
     protected $table = 'orders';
-    protected $fillable = ['customer_id', 'total', 'payment_method', 'comments', 'status_id', 'created_at', 'updated_at'];
+    protected $fillable = ['customer_id', 'total', 'payment_method', 'comments', 'status_id', 'customer_notified' ,'created_at', 'updated_at'];
     
     //relations
 	
@@ -48,10 +48,39 @@ class Order extends Model
 		'created_at'=> 'datetime'
 	];
 	
+	/**
+	 * @return mixed
+	 */
+	public function customerNotified()
+	{
+		return $this->customer_notified;
+	}
 	
+	/**
+	 * @todo This should be added to a repository and not in the model
+	 */
 	public function finishOrder()
 	{
 		$this->status_id = OrderStatus::ready();
+		$this->save();
+	}
+	
+	/**
+	 * @todo This should be added to a repository and not in the model
+	 */
+	public function cancelOrder()
+	{
+		$this->status_id = OrderStatus::processing();
+		$this->save();
+	}
+	
+	
+	/**
+	 * @todo This should be added to a repository and not in the model
+	 */
+	public function notifyCustomer()
+	{
+		$this->customer_notified = true;
 		$this->save();
 	}
 }

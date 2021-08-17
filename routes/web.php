@@ -25,7 +25,35 @@
 		
 		Route::get('/admin/orders/{order_id}/finish', [\App\Http\Controllers\admin\OrdersController::class, 'finishOrder'])
 			->name('admin.orders.finish')
-			->middleware('admin');;
+			->middleware('admin');
+		
+		Route::get('/admin/orders/{order_id}/cancel', [\App\Http\Controllers\admin\OrdersController::class, 'cancelOrder'])
+			->name('admin.orders.cancel')
+			->middleware('admin');
+		
+		Route::post('/admin/orders/{order_id}/delete', [\App\Http\Controllers\admin\OrdersController::class, 'deleteOrder'])
+			->name('admin.orders.delete')
+			->middleware('admin');
+	
+		Route::post('/admin/orders/{order_id}/notify', [\App\Http\Controllers\admin\OrdersController::class, 'sendNotification'])
+			->name('admin.orders.notify')
+			->middleware('admin');
+		
+		Route::get('/admin/orders/{order_id}/kitchenPrint', [\App\Http\Controllers\admin\PrintController::class, 'printForKitchen'])
+			->name('admin.orders.kitchen')
+			->middleware('admin');
+		
+		Route::get('/admin/orders/{order_id}/customerPrint', [\App\Http\Controllers\admin\PrintController::class, 'printForCustomer'])
+			->name('admin.orders.customer')
+			->middleware('admin');
+		
+		Route::get('/admin/products', [\App\Http\Controllers\admin\ProductsController::class, 'index'])
+			->name('admin.products')
+			->middleware('admin');
+		
+		Route::get('/admin/customers', [\App\Http\Controllers\admin\CustomersController::class, 'index'])
+			->name('admin.customers')
+			->middleware('admin');
 	
 	//end of admin routes
 	

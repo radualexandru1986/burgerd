@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use Twilio\Exceptions\TwilioException;
 use Twilio\Rest\Client as TwilioClient;
 
 class SendSMS
@@ -16,7 +17,7 @@ class SendSMS
 		$this->twilio = new TwilioClient($this->accountId, $this->authToken);
 	}
 	
-	public function sendSms($receivers=[])
+	public function sendMassSms($receivers=[], $message)
 	{
 		if(!empty($receivers)){
 			foreach ($receivers as $receiver){
@@ -24,13 +25,31 @@ class SendSMS
 					'+44'.$receiver,
 					[
 						'from' => 'Emys-Burger',
-						'body' => 'Confirmati pe whatsapp cu un printscreen daca ati primit mesajul. Alex'
+						'body' => $message
 					]
 				);
 			}
 		}
 		
 		
+	}
+	
+	/**
+	 * @param $receiver
+	 * @param $message
+	 * @throws \Twilio\Exceptions\TwilioException
+	 */
+	public function custom($receiver, $message)
+	{
+		$message = str_replace( ["\r\n", "\n", "\r"], '',$message,);
+		$receiver = $this->phoneValidator($receiver);
+			$this->twilio->messages->create(
+				$receiver,
+				[
+					'from' => 'Emys-Burger',
+					'body' => $message
+				]
+			);
 	}
 	
 	/**

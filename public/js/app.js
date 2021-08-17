@@ -5707,6 +5707,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/admin/store/store.js":
+/*!*******************************************!*\
+  !*** ./resources/js/admin/store/store.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "admin": () => (/* binding */ admin)
+/* harmony export */ });
+var admin = {
+  state: {},
+  mutations: {}
+};
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -5715,14 +5733,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/store */ "./resources/js/store/store.js");
-/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
-/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vue_toastification__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-toastification */ "./node_modules/vue-toastification/dist/esm/index.js");
-/* harmony import */ var vue_toastification_dist_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-toastification/dist/index.css */ "./node_modules/vue-toastification/dist/index.css");
+/* harmony import */ var _admin_store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/store/store */ "./resources/js/admin/store/store.js");
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_toastification__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-toastification */ "./node_modules/vue-toastification/dist/esm/index.js");
+/* harmony import */ var vue_toastification_dist_index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-toastification/dist/index.css */ "./node_modules/vue-toastification/dist/index.css");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -5731,69 +5751,84 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  // Import the CSS or use your own!
 
 
-vue__WEBPACK_IMPORTED_MODULE_4__.default.config.ignoredElements = ['x-item'];
-vue__WEBPACK_IMPORTED_MODULE_4__.default.use(vuex__WEBPACK_IMPORTED_MODULE_5__.default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.use(vue_toastification__WEBPACK_IMPORTED_MODULE_2__.default);
-var store = new vuex__WEBPACK_IMPORTED_MODULE_5__.default.Store(_store_store__WEBPACK_IMPORTED_MODULE_0__.burgerstore);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('add-to-cart-component', __webpack_require__(/*! ./components/AddToCartComponent.vue */ "./resources/js/components/AddToCartComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('mobile-menu-component', __webpack_require__(/*! ./components/MobileMenuComponent.vue */ "./resources/js/components/MobileMenuComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('cart-menu-component', __webpack_require__(/*! ./components/CartMenuComponent.vue */ "./resources/js/components/CartMenuComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('toast', __webpack_require__(/*! ./components/shared/ToastComponent */ "./resources/js/components/shared/ToastComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('loader', __webpack_require__(/*! ./components/shared/LoaderComponent */ "./resources/js/components/shared/LoaderComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('data-loader', __webpack_require__(/*! ./components/shared/DataLoaderComponent */ "./resources/js/components/shared/DataLoaderComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('checkout-screen', __webpack_require__(/*! ./components/shared/CheckoutScreenComponent */ "./resources/js/components/shared/CheckoutScreenComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('order-success', __webpack_require__(/*! ./components/shared/OrderSuccessComponent */ "./resources/js/components/shared/OrderSuccessComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.component('small-item', __webpack_require__(/*! ./components/shared/SmallItemComponent */ "./resources/js/components/shared/SmallItemComponent.vue").default);
-var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
-  el: '#app',
-  store: store,
-  data: {
-    filtered: 'burgers'
-  },
-  components: {},
-  methods: {
-    toggleMobileMenuState: function toggleMobileMenuState() {
-      this.$store.commit('toggleMobileMenuState');
-    }
-  },
-  computed: {
-    getTotal: function getTotal() {
-      var orderItems = this.$store.state.orderItems;
+vue__WEBPACK_IMPORTED_MODULE_5__.default.config.ignoredElements = ['x-item'];
+vue__WEBPACK_IMPORTED_MODULE_5__.default.use(vuex__WEBPACK_IMPORTED_MODULE_6__.default);
+vue__WEBPACK_IMPORTED_MODULE_5__.default.use(vue_toastification__WEBPACK_IMPORTED_MODULE_3__.default);
+var store = new vuex__WEBPACK_IMPORTED_MODULE_6__.default.Store(_store_store__WEBPACK_IMPORTED_MODULE_0__.burgerstore);
+var adminStore = new vuex__WEBPACK_IMPORTED_MODULE_6__.default.Store(_admin_store_store__WEBPACK_IMPORTED_MODULE_1__.admin);
 
-      if (orderItems.length > 0) {
-        return orderItems.map(function (item) {
-          return Number(item.perItem) * Number(item.quantity);
-        }).reduce(function (prev, curr) {
-          return prev + curr;
-        }, 0).toFixed(2);
-      } else {
-        return 0;
+if (document.getElementById('app')) {
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('add-to-cart-component', __webpack_require__(/*! ./components/AddToCartComponent.vue */ "./resources/js/components/AddToCartComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('mobile-menu-component', __webpack_require__(/*! ./components/MobileMenuComponent.vue */ "./resources/js/components/MobileMenuComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('cart-menu-component', __webpack_require__(/*! ./components/CartMenuComponent.vue */ "./resources/js/components/CartMenuComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('toast', __webpack_require__(/*! ./components/shared/ToastComponent */ "./resources/js/components/shared/ToastComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('loader', __webpack_require__(/*! ./components/shared/LoaderComponent */ "./resources/js/components/shared/LoaderComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('data-loader', __webpack_require__(/*! ./components/shared/DataLoaderComponent */ "./resources/js/components/shared/DataLoaderComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('checkout-screen', __webpack_require__(/*! ./components/shared/CheckoutScreenComponent */ "./resources/js/components/shared/CheckoutScreenComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('order-success', __webpack_require__(/*! ./components/shared/OrderSuccessComponent */ "./resources/js/components/shared/OrderSuccessComponent.vue").default);
+  vue__WEBPACK_IMPORTED_MODULE_5__.default.component('small-item', __webpack_require__(/*! ./components/shared/SmallItemComponent */ "./resources/js/components/shared/SmallItemComponent.vue").default);
+  var app = new vue__WEBPACK_IMPORTED_MODULE_5__.default({
+    el: '#app',
+    store: store,
+    data: {
+      filtered: 'burgers'
+    },
+    components: {},
+    methods: {
+      toggleMobileMenuState: function toggleMobileMenuState() {
+        this.$store.commit('toggleMobileMenuState');
       }
     },
-    getItemsTotal: function getItemsTotal() {
-      var orderItems = this.$store.state.orderItems;
+    computed: {
+      getTotal: function getTotal() {
+        var orderItems = this.$store.state.orderItems;
 
-      if (orderItems.length > 0) {
-        return orderItems.map(function (item) {
-          return Number(item.quantity);
-        }).reduce(function (prev, curr) {
-          return prev + curr;
-        }, 0).toFixed(0);
-      } else {
-        return 0;
+        if (orderItems.length > 0) {
+          return orderItems.map(function (item) {
+            return Number(item.perItem) * Number(item.quantity);
+          }).reduce(function (prev, curr) {
+            return prev + curr;
+          }, 0).toFixed(2);
+        } else {
+          return 0;
+        }
+      },
+      getItemsTotal: function getItemsTotal() {
+        var orderItems = this.$store.state.orderItems;
+
+        if (orderItems.length > 0) {
+          return orderItems.map(function (item) {
+            return Number(item.quantity);
+          }).reduce(function (prev, curr) {
+            return prev + curr;
+          }, 0).toFixed(0);
+        } else {
+          return 0;
+        }
+      }
+    },
+    beforeMount: function beforeMount() {
+      if (local_storage__WEBPACK_IMPORTED_MODULE_2___default().get('orderItems')) {
+        this.$store.commit('resurrectOrders', local_storage__WEBPACK_IMPORTED_MODULE_2___default().get('orderItems'));
+      }
+
+      if (local_storage__WEBPACK_IMPORTED_MODULE_2___default().get('components')) {
+        this.$store.commit('resurrectComponentsState', local_storage__WEBPACK_IMPORTED_MODULE_2___default().get('components'));
       }
     }
-  },
-  beforeMount: function beforeMount() {
-    if (local_storage__WEBPACK_IMPORTED_MODULE_1___default().get('orderItems')) {
-      this.$store.commit('resurrectOrders', local_storage__WEBPACK_IMPORTED_MODULE_1___default().get('orderItems'));
-    }
+  });
+} //admin
 
-    if (local_storage__WEBPACK_IMPORTED_MODULE_1___default().get('components')) {
-      this.$store.commit('resurrectComponentsState', local_storage__WEBPACK_IMPORTED_MODULE_1___default().get('components'));
+
+if (document.getElementById('admin')) {
+  var _admin = new vue__WEBPACK_IMPORTED_MODULE_5__.default({
+    'el': '#admin',
+    store: adminStore,
+    mounted: function mounted() {
+      alert('admin is mounted');
     }
-  }
-});
+  });
+}
 
 /***/ }),
 
