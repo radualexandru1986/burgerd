@@ -132,6 +132,38 @@
                     </div>
                 </div>
             </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Notify customer </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="notificationForm" action="{{route('admin.orders.notify', ['order_id'=>$order->id])}}" method="post">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="telephone" class="form-label">Telephone</label>
+                                        <input type="text" name="telephone" class="form-control" id="telephone" >
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Example textarea</label>
+                                        <textarea class="form-control" rows="5"  name="message"  wrap="soft">
+                                Hi , your order is on its way.
+                                The ETA is 10 min.
+                                Thank you for your patience.
+                            </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" id="sendNotificationButton" class="btn btn-success">Send Notification</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endforeach
             @if(session('success'))
                     <div class="w-100">
@@ -150,38 +182,7 @@
 
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Notify customer </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="notificationForm" action="{{route('admin.orders.notify', ['order_id'=>$order->id])}}" method="post">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="telephone" class="form-label">Telephone</label>
-                            <input type="text" name="telephone" class="form-control" id="telephone" >
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Example textarea</label>
-                            <textarea class="form-control" rows="5"  name="message"  wrap="soft">
-                                Hi , your order is on its way.
-                                The ETA is 10 min.
-                                Thank you for your patience.
-                            </textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="sendNotificationButton" class="btn btn-success">Send Notification</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
 @push('head')
     <script>
