@@ -22,6 +22,7 @@ class CreateItemsTable extends Migration
             $table->text('description')->nullable();
             $table->text('recipe')->nullable();
             $table->string('class')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

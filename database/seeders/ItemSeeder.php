@@ -20,6 +20,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/TheTurk.png',
 			'price' => 8.50,
 			'class' => 'burgers',
+			'type'=>'bundle',
 			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'cheese', 'tomato', 'beef burger', 'egg', 'bacon', 'pickles',  'sauce', 'ketchup']),
 			'description' => 'This burger can satisfy your taste buds within seconds of biting in.
 			 The egg is freshly cooked with the bacon and the beef, while the salad and the tomato bring a fresh taste creating an incredible bust of flavour.'
@@ -30,6 +31,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/DoubleAnimal.png',
 			'price' => 9.50,
 			'class' => 'burgers',
+			'type'=>'bundle',
 			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'pickles', 'ketchup']),
 			'description' => 'Double the taste or double nothing. Listen to your instincts and satisfy your animal hunger with this burger.'
 		]);
@@ -39,6 +41,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/VeganPrime.png',
 			'price' => 8.50,
 			'class' => 'vegan',
+			'type' => 'bundle',
 			'recipe'=> json_encode(['Bun', 'vegan', 'mayo', 'salad', 'tomato', 'vegan burger', 'pickles', 'ketchup']),
 			'description' => 'Healthy, natural, fresh and tasty, no animal was injured during the making of this burger.'
 		]);
@@ -48,6 +51,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/JuicyLucy.png',
 			'price' => 8.50,
 			'class' => 'burgers',
+			'type'=>'bundle',
 			'recipe'=> json_encode(['bun', 'garlic', 'mayo', 'salad', 'tomatoes', 'red onion', 'pickles', 'grilled chicken breast', 'sauce']),
 			'description' => "Shakespeare didn't eat chicken burgers, he was too caught up with Ham-let."
 		]);
@@ -57,6 +61,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/HotDog.png',
 			'price' => 7.50,
 			'class' => 'burgers',
+			'type'=>'bundle',
 			'recipe'=> json_encode(['bun', 'hot', 'dog', 'sausage', 'salad', 'tomato', 'caramelized onion', 'bacon', 'mustard', 'ketchup']),
 			'description' => 'This one is a bit more unique, it’s not your basic simple hot dog. By combining different fresh ingredients, special cooked red onions and high quality hot dog sausages, we created something full of rich flavour that let’s you wanting more.'
 		]);

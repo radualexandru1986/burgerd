@@ -12,7 +12,16 @@
                     <span class="item-card-price" style="text-align: right">£{{$item->price}}</span>
                 </div>
             </div>
-            <h4 class="card-title pl-2">{{$item->name}} (#{{$item->id}})</h4>
+
+            <div class="card-title pl-2">
+                <h4 class="card-title pl-2 m-0 p-0 w-100  ">{{$item->name}} (#{{$item->id}}) </h4>
+                @if($item->isBundle())
+                    <p style="font-family:Roboto, sans-serif; font-size:16px;">
+                        <strong>Bundle ( chips + soft drink )</strong>
+                    </p>
+                @endif
+            </div>
+
             <p class="card-text py-2" style="font-weight: lighter">
                {{$item->description}}
             </p>

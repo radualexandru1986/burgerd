@@ -11,9 +11,14 @@ class Item extends Model
     
     protected $table = 'items';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'photo', 'price', 'rating', 'description', 'recipe', 'class'];
+    protected $fillable = ['name', 'photo', 'price', 'rating', 'description', 'recipe', 'class', 'type'];
 	
 	protected $casts = [
 		'recipe' => 'array',
 	];
+	
+	public function isBundle()
+	{
+		return $this->type !== null;
+	}
 }
