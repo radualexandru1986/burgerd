@@ -38,8 +38,8 @@ class UserSeeder extends Seeder
 		]);
 		
 		DB::table('users')->insert([
-			'name' => 'Cludiu',
-			'email' => 'claudiufru@yahoo.com',
+			'name' => 'Claudiu',
+			'email' => 'claudiu530y@gmail.com',
 			'email_verified_at' => now(),
 			'password' => Hash::make('aJz}I%AdYf$cQM[u>LP6k9$^'),
 			'created_at' => now(),
