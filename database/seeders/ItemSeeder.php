@@ -20,7 +20,7 @@ class ItemSeeder extends Seeder
 			'photo' => 'images/menu/TheTurk.png',
 			'price' => 8.50,
 			'class' => 'burgers',
-			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'tomato', 'beef burger', 'egg', 'bacon', 'pickles',  'sauce', 'ketchup']),
+			'recipe'=> json_encode(['Bun', 'mayo', 'salad', 'cheese', 'tomato', 'beef burger', 'egg', 'bacon', 'pickles',  'sauce', 'ketchup']),
 			'description' => 'This burger can satisfy your taste buds within seconds of biting in.
 			 The egg is freshly cooked with the bacon and the beef, while the salad and the tomato bring a fresh taste creating an incredible bust of flavour.'
 		]);

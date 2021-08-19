@@ -21,7 +21,29 @@ class UserSeeder extends Seeder
 			'email_verified_at' => now(),
 			'password' => Hash::make('aJz}I%AdYf$cQM[u>LP6k9$^'),
 			'created_at' => now(),
+			'role' => 'admin',
 			'remember_token'=> '2134567890dfghjk',
+			'updated_at' => now()
+		]);
+		
+		DB::table('users')->insert([
+			'name' => 'Alex',
+			'email' => 'radu.c.alexandru@hotmail.com',
+			'email_verified_at' => now(),
+			'password' => Hash::make('aJz}I%AdYf$cQM[u>LP6k9$^'),
+			'created_at' => now(),
+			'role' => 'admin',
+			'remember_token'=> 'efrgthynbtrvsea',
+			'updated_at' => now()
+		]);
+		
+		DB::table('users')->insert([
+			'name' => 'Cludiu',
+			'email' => 'claudiufru@yahoo.com',
+			'email_verified_at' => now(),
+			'password' => Hash::make('aJz}I%AdYf$cQM[u>LP6k9$^'),
+			'created_at' => now(),
+			'remember_token'=> 'efrgthynbtrvsea',
 			'updated_at' => now()
 		]);
     }

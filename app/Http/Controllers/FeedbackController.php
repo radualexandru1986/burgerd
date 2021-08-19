@@ -33,4 +33,6 @@ class FeedbackController extends Controller
 		
 		return redirect()->back()->with('success', 'Thank you for your message.');
 	}
+	
+	
 }

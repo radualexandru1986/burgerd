@@ -30,7 +30,10 @@ class SendNewOrderNotification
      */
     public function handle(OrderValidated $event)
     {
-    	$admin = User::first();
-		$admin->notify(new NewOrderNotification($event->order));
+    	$admins = User::where('role', 'admin')->get();
+    	$admins->each(function($admin) use ($event){
+			$admin->notify(new NewOrderNotification($event->order));
+		});
+		
     }
 }
