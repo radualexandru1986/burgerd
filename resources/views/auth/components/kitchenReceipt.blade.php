@@ -29,7 +29,7 @@
 <h1 class="text-center">Items</h1>
 @foreach($order->items as $product)
     <div class="item" style="border-bottom:1px solid black; border-top: 1px solid black">
-        <h1 class="text-center"># {{$product->item->id}} <br> - <strong>{{$product->item->name}}</strong></h1>
+        <h1 class="text-center"># {{$product->item->id}} <br> - <strong>{{$product->item->name}} x {{$product->quantity}}</strong></h1>
         <h2 class="text-center">{{$product->drink()}}</h2>
     </div>
 @endforeach

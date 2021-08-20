@@ -35,7 +35,7 @@
                                 @foreach($order->items as $product)
                                     <div class="card col-4" >
                                         <div class="card-body">
-                                            <h3 class="card-title">#{{$product->item->id}} | <strong>{{$product->item->name}}</strong> </h3>
+                                            <h3 class="card-title">#{{$product->item->id}} | <strong>{{$product->item->name}} x {{$product->quantity}}</strong> </h3>
                                             <h5>{{$product->drink()}}</h5>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                             @foreach($order->items as $product)
                                 <div class="card col-4" >
                                     <div class="card-body">
-                                        <h3 class="card-title">#{{$product->item->id}} | <strong>{{$product->item->name}}</strong> </h3>
+                                        <h3 class="card-title">#{{$product->item->id}} | <strong>{{$product->item->name}} x {{$product->quantity}}</strong> </h3>
                                         <h5>{{$product->drink()}}</h5>
                                     </div>
                                 </div>

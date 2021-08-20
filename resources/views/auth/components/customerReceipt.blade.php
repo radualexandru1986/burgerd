@@ -87,7 +87,7 @@
         </tr>
         @foreach($order->items as $product)
             <tr>
-                <td>{{$product->item->name}}</td>
+                <td>{{$product->item->name}} @if($product->drink()) <br><span style="font-size: 12px;">{{$product->drink()}}</span>  @endif</td>
                 <td>{{$product->quantity}}</td>
                 <td>£ {{$product->quantity* $product->item->price}}</td>
             </tr>
