@@ -54,6 +54,10 @@
 		Route::get('/admin/customers', [\App\Http\Controllers\admin\CustomersController::class, 'index'])
 			->name('admin.customers')
 			->middleware('admin');
+		
+		Route::get('/admin/orders-history', [\App\Http\Controllers\admin\OrdersController::class, 'ordersHistory'])
+			->name('admin.history')
+			->middleware('admin');
 	
 	//end of admin routes
 	

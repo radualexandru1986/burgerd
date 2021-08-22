@@ -8,6 +8,7 @@ use App\Services\SendSMS;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Twilio\Exceptions\TwilioException;
+use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
 {
@@ -75,6 +76,22 @@ class OrdersController extends Controller
 			return redirect()->back()->withErrors(['sms'=>'The phone number does not have the right format'.$request->get('telephone').$e->getMessage()]);
 		}
 		
+	}
+	
+	/**
+	 * @param $orderId
+	 * @param Request $request
+	 * @param SendSMS $sms
+	 * @param Order $order
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function ordersHistory(Request $request)
+	{
+		$orders = Order::all()->groupBy(function ($order){
+			return Carbon::parse($order->created_at)->monthName;
+		})->sort();
+		
+		return view('auth.orders-history', compact('orders'));
 	}
 	
 	/**

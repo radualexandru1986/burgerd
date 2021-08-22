@@ -12,6 +12,12 @@
                 <a href="{{route('admin.orders')}}" class="nav-link px-0 align-middle">
                     <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
             </li>
+
+            <li>
+                <a href="{{route('admin.history')}}" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-clock-history"></i> <span class="ms-1 d-none d-sm-inline">Orders History</span> </a>
+            </li>
+
             <li>
                 <a href="{{route('admin.products')}}"   class="nav-link px-0 align-middle">
                     <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
@@ -20,6 +26,7 @@
                 <a href="{{route('admin.customers')}}" class="nav-link px-0 align-middle">
                     <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
             </li>
+
         </ul>
         <hr>
         <div class="dropdown pb-4">
