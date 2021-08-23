@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import ls, {get,set} from "local-storage";
 export default {
 
   mounted() {
@@ -21,6 +22,7 @@ export default {
         icon: true,
         rtl: false
       });
+      ls.clear()
     }
   }
 }
