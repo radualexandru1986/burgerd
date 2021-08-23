@@ -54,7 +54,8 @@
                     </div>
                     <br>
                     <div class="summary-footer" >
-                      <button class="btn btn-dark w-100 btn-lg my-1" @click="showCheckout()">Go to checkout!</button>
+                      <button v-show="shopState" class="btn btn-dark w-100 btn-lg my-1" @click="showCheckout()">Go to checkout!</button>
+                      <button v-if="!shopState" class="btn btn-warning w-100 btn-lg my-1" disabled>Our Store is Closed</button>
                       <button class="btn btn-light border-1 border-danger w-100 btn-lg my-1" @click="resetOrder()">Reset Order</button>
                     </div>
                   </div>
@@ -128,6 +129,10 @@ export default {
 
     successScreen(){
       return this.$store.state.successScreen;
+    },
+
+    shopState(){
+      return this.$store.state.shopState
     }
   },
 

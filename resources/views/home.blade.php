@@ -19,7 +19,7 @@
         </section>
         <section class="container-xl">
             @include('layouts.menu-section')
-            <data-loader :data="{{json_encode($items)}}"></data-loader>
+            <data-loader :data="{{json_encode($items)}}" :shopstate="{{$settings->open}}"></data-loader>
         </section>
 
     </div>

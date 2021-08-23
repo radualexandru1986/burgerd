@@ -1,6 +1,7 @@
 import ls, {get,set} from "local-storage";
 export const  burgerstore ={
     state: {
+        shopState  :false,
         components:{
           checkout:{
               confirmation:{
@@ -33,6 +34,13 @@ export const  burgerstore ={
         orderItems: []  //[{id:1234, quantity : 2}]
     },
     mutations: {
+        //This will set the state of the shop
+        setShopState(state, payload) {
+            if (typeof payload === 'number'){
+                payload = payload === 1;
+            }
+            state.shopState = payload
+        },
         //This shows the next screen
         showScreen(state, payload = {}){
             state[payload.actual] = false;

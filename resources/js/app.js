@@ -23,6 +23,7 @@ if(document.getElementById('app')){
     Vue.component('checkout-screen', require('./components/shared/CheckoutScreenComponent').default);
     Vue.component('order-success', require('./components/shared/OrderSuccessComponent').default);
     Vue.component('small-item', require('./components/shared/SmallItemComponent').default);
+    Vue.component('shop-closed', require('./components/ShopClosed.component').default);
     const app = new Vue({
         el: '#app',
         store:store,

@@ -27,6 +27,11 @@
                     <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
             </li>
 
+            <li>
+                <a href="{{route('admin.settings')}}" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
+            </li>
+
         </ul>
         <hr>
         <div class="dropdown pb-4">

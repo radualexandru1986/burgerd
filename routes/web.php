@@ -58,6 +58,18 @@
 		Route::get('/admin/orders-history', [\App\Http\Controllers\admin\OrdersController::class, 'ordersHistory'])
 			->name('admin.history')
 			->middleware('admin');
+		
+		Route::get('/admin/settings', [\App\Http\Controllers\admin\SettingsController::class, 'index'])
+			->name('admin.settings')
+			->middleware('admin');
+		
+		Route::get('/admin/settings/close', [\App\Http\Controllers\admin\SettingsController::class, 'closeStore'])
+			->name('admin.settings.close')
+			->middleware('admin');
+		
+		Route::get('/admin/settings/open', [\App\Http\Controllers\admin\SettingsController::class, 'openStore'])
+			->name('admin.settings.open')
+			->middleware('admin');
 	
 	//end of admin routes
 	
