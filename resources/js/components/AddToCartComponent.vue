@@ -69,7 +69,7 @@ export default {
 
     addToCart(){
       this.$store.commit('addItemsToOrder', {
-        id:this.itemnumber ,
+        id: this.itemnumber ,
         quantity: this.quantity,
         perItem : this.price,
         isInCart:this.isInCart,
@@ -85,11 +85,11 @@ export default {
     defaultBeverage(){
       let items = this.$store.state.items;
       let isMenu = items.filter(el=>{
-        return el.id==this.itemnumber && (el.class == 'beverages' || el.class == 'sides')
+        return el.id == this.itemnumber && (el.class == 'Beverages' || el.class == 'Sides')
       }).length < 1
-      console.log(isMenu)
       if(isMenu){
-        let beverage = items.filter(el=>el.class == 'beverages')[1]
+        let beverage = items.filter(el=>el.class == 'Beverages')[1]
+
         return {drink : beverage.id};
       }
     }

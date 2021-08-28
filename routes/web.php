@@ -47,8 +47,14 @@
 			->name('admin.orders.customer')
 			->middleware('admin');
 		
-		Route::get('/admin/products', [\App\Http\Controllers\admin\ProductsController::class, 'index'])
-			->name('admin.products')
+		Route::resource('/admin/products', \App\Http\Controllers\admin\ProductsController::class)
+			->names([
+				'index'=>'admin.products',
+				'create'=>'admin.products.create',
+				'store'=>'admin.products.store',
+				'update'=>'admin.products.update',
+				'destroy'=>'admin.products.destroy'
+			])
 			->middleware('admin');
 		
 		Route::get('/admin/customers', [\App\Http\Controllers\admin\CustomersController::class, 'index'])

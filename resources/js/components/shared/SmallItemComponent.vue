@@ -26,13 +26,16 @@ export default {
     }
   },
   computed :{
-  beverages(){
-    return this.$store.state.items.filter(el=>el.class == 'beverages')
+    beverages(){
+      return this.$store.state.items.filter(el=>el.class == 'Beverages')
+    },
+    selectedDrink() {
+      return  this.$store.state.orderItems.filter(el=>el.id == this.itemid)[0].drink
+    }
   },
-  selectedDrink() {
-    return  this.$store.state.orderItems.filter(el=>el.id == this.itemid)[0].drink
+  mounted(){
+    console.log('mounted small item')
   }
-}
 }
 </script>
 

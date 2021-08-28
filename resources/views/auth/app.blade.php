@@ -21,7 +21,7 @@
 <div class="container-fluid p-0 m-0" style="font-family: Nunito">
     <div class="row p-0 m-0">
         @if(\Illuminate\Support\Facades\Auth::user())
-            <div class="col-auto col-xl-2 col-md-3 p-0">
+            <div class="col-auto col-xl-2 col-md-3 p-0 bg-dark">
                 @include('auth.shared.sidenav')
             </div>
         @endif

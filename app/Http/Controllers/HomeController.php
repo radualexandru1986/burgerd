@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
     public function index(Item $item)
 	{
-		return view('home', ['items'=>$item->all(), 'settings'=>Settings::first()]);
+		$items = $item->orderBy('order', 'asc')->get();
+		return view('home', ['items'=>$items, 'settings'=>Settings::first()]);
 	}
 }

@@ -36,9 +36,7 @@
                         </h2>
                         <div id="xx{{$item->id}}" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#x{{$item->id}}">
                             <div class="accordion-body">
-                                  @foreach($item->recipe as $ingredient)
-                                    <span class="text-capitalize">{{$ingredient}}</span>,
-                                  @endforeach
+                                {{$item->recipe}}
                             </div>
                         </div>
                     </div>
