@@ -57,6 +57,16 @@
 			])
 			->middleware('admin');
 		
+		Route::resource('/admin/users', \App\Http\Controllers\admin\UsersController::class)
+			->names([
+				'index'=>'admin.users',
+				'create'=>'admin.users.create',
+				'store'=>'admin.users.store',
+				'update'=>'admin.users.update',
+				'destroy'=>'admin.users.destroy'
+			])
+			->middleware('admin');
+		
 		Route::get('/admin/customers', [\App\Http\Controllers\admin\CustomersController::class, 'index'])
 			->name('admin.customers')
 			->middleware('admin');

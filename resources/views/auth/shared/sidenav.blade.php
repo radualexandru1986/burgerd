@@ -32,6 +32,11 @@
                     <i class="fs-4 bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
             </li>
 
+            <li>
+                <a href="{{route('admin.users')}}" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-person-bounding-box"></i> <span class="ms-1 d-none d-sm-inline">Users</span> </a>
+            </li>
+
         </ul>
         <hr>
         <div class="dropdown pb-4">
