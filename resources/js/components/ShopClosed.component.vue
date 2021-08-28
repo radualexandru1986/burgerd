@@ -22,7 +22,7 @@ export default {
         icon: true,
         rtl: false
       });
-      ls.remove('components')
+      ls.clear()
     }
   }
 }
