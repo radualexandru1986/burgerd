@@ -59,13 +59,16 @@
                                                         <hr>
                                                         <div class="row">
                                                             <div class="col-3 m-auto">
-                                                                <a href="#" class="btn btn-dark w-100"> <i class="bi bi-printer"></i></a>
+                                                                <a href="{{route('admin.orders.customer', ['order_id'=>$i->id])}}" class="btn btn-dark w-100"> <i class="bi bi-printer"></i></a>
                                                             </div>
                                                             <div class="col-3 m-auto">
-                                                                <a href="#" class="btn btn-info w-100 "> K </a>
+                                                                <a href="{{route('admin.orders.kitchen', ['order_id'=>$i->id])}}" class="btn btn-info w-100 "> K </a>
                                                             </div>
                                                             <div class="col-3 m-auto">
-                                                                <a href="#" class="btn btn-light border-danger w-100 "><i class="bi bi-trash"></i></a>
+                                                                <form id="deleteOrderForm-{{$i->id}}" action="{{route('admin.orders.delete', ['order_id'=> $i->id])}}" method="post">
+                                                                    @csrf
+                                                                </form>
+                                                                <button data-delete="{{$i->id}}" class="btn btn-light border-danger w-100 "><i class="bi bi-trash"></i></button>
                                                             </div>
                                                         </div>
 
@@ -86,3 +89,18 @@
         </div>
     </div>
 @endsection
+@push('head')
+    <script>
+        let orderDeleteButtons = document.querySelectorAll('button')
+        orderDeleteButtons.forEach((button)=>{
+            button.addEventListener('click', ()=>{
+                if(button.dataset.delete) {
+                    if(confirm('Are you sure you want to delete this order ? ')){
+                        document.getElementById(`deleteOrderForm-${button.dataset.delete}`).submit()
+                    }
+                }
+            })
+
+        })
+    </script>
+@endpush
