@@ -14,7 +14,7 @@
             </div>
 
             <div class="card-title pl-2">
-                <h4 class="card-title pl-2 m-0 p-0 w-100  ">{{$item->name}} (#{{$item->id}}) </h4>
+                <h4 class="card-title pl-2 m-0 p-0 w-100  ">{{$item->name}} (#{{$item->order}}) </h4>
                 @if($item->isBundle())
                     <p style="font-family:Roboto, sans-serif; font-size:16px;">
                         <strong>Bundle ( chips + soft drink )</strong>

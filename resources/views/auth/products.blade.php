@@ -27,7 +27,11 @@
                 </h2>
                 <div id="collapse-{{$item->id}}" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <button class="float-end btn btn-danger"><i class="bi bi-trash"></i> Delete Product</button>
+                        <form  id="deleteItemForm-{{$item->id}}" action="{{route('admin.products.destroy', ['product'=>$item->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        <button class="float-end btn btn-danger" data-delete="{{$item->id}}" id="deleteItemButton-{{$item->id}}"><i class="bi bi-trash"></i> Delete Product</button>
 
                         <form class="p-4 shadow" method="POST" action="{{route('admin.products.update', ['product'=>$item->id])}}"  enctype="multipart/form-data">
                             @csrf
@@ -97,3 +101,17 @@
     </div>
 
 @endsection
+@push('head')
+    <script>
+        let buttons = document.querySelectorAll('button')
+        buttons.forEach((button)=>{
+            if(button.dataset.delete) {
+                button.addEventListener("click", ()=>{
+                    if(confirm('Are you sure you want to delete this product?')) {
+                        document.getElementById(`deleteItemForm-${button.dataset.delete}`).submit()
+                    }
+                })
+            }
+        })
+    </script>
+@endpush
