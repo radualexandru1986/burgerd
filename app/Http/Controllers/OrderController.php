@@ -19,7 +19,7 @@ use Twilio\Exceptions\TwilioException;
 
 class OrderController extends Controller
 {
-	
+
 	/**
 	 * Collects the data from the form
 	 * @param Request $request
@@ -42,28 +42,28 @@ class OrderController extends Controller
 		$requestData = $request->all();
 		$request->merge(['postcode' => str_replace(' ', '', $request->get('postcode'))]);
 		$request->merge( ['phone' => str_replace(' ', '', $request->get('phone'))]);
-		
+
 		$request->validate([
 			'street'=>'required|min:3',
 			'number'=>'required|min:1|max:5',
 			'postcode'=>'required|min:6|max:6',
 			'phone'=>'required|min:11|max:11',
 		]);
-		
+
 		//validate the postcode
-		try {
-			$postcodeFilter->inRange($request->get('postcode'));
-		}catch(PostCodeException $e){
-			return response()->json(['message'=>$e->getMessage()], 413);
-		}
-		
-		
+		// try {
+		// 	$postcodeFilter->inRange($request->get('postcode'));
+		// }catch(PostCodeException $e){
+		// 	return response()->json(['message'=>$e->getMessage()], 413);
+		// }
+
+
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		//create a new customer with the phone number
 		$newCustomer = Customer::updateOrCreate([
 			'phone'=>$request->get('phone')
 		]);
-		
+
 		//add data to address table
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		Address::create([
@@ -72,7 +72,7 @@ class OrderController extends Controller
 			'street' => $request->get('street'),
 			'number' =>$request->get('number')
 		]);
-		
+
 		//Create a new order
 		$order = Order::create([
 			'customer_id' => $newCustomer->id,
@@ -82,19 +82,19 @@ class OrderController extends Controller
 		]);
 		//generate a new random number
 		$code = (new CodeGenerator())->generateRandom();
-		
+
 		//send sms
 		$sms->sendConfirmationCode($request->get('phone'), $code);
-		
+
 		//Todo Is very important to create a repository and add database transactions with a try catch block
 		Verification::create([
 			'customer_id'=> $newCustomer->id,
 			'order_id' => $order->id,
 			'verification_code' => $code
 		]);
-		
-		
-		
+
+
+
 		//Add items to orderItems
 		foreach ($orderRequest as $item) {
 			if(!isset($item['drink'])){
@@ -112,7 +112,7 @@ class OrderController extends Controller
 		}
 		return 'OK';
 	}
-	
+
 	/**
 	 *
 	 * @param Request $request
@@ -127,7 +127,7 @@ class OrderController extends Controller
 		$request->validate([
 			'verification' => 'required|min:5|:max:5'
 		]);
-		
+
 		// check with the database and see if the code exists
 		$code = $verification->where( 'verification_code', $request->get('verification') )
 							 ->whereDate( 'created_at',  today() )
@@ -135,20 +135,20 @@ class OrderController extends Controller
 		if(empty($code)){
 			throw new \Exception('Please insert the correct code.', 501);
 		}
-		
+
 		if($code->verified){
 			throw new \Exception('This order is already verified.',502);
 		}
-		
+
 		$code->verified = true;
 		$code->save();
 		//validate order
 		$this->validateOrder($code);
-		
+
 		return json_encode(['message'=>'The order is on its way!']);
 	}
-	
-	
+
+
 	/**
 	 * @param array $order
 	 * @return string
@@ -159,10 +159,10 @@ class OrderController extends Controller
 		foreach ($order as $item) {
 			$total = $total + ($item['quantity'] * $item['perItem']);
 		}
-		
+
 		return $total;
 	}
-	
+
 	/**
 	 * Validates the order
 	 * @param Verification $code
@@ -172,8 +172,8 @@ class OrderController extends Controller
 		$order = $code->order;
 		$order->status_id = OrderStatus::processing();
 		$order->save();
-		
+
 		OrderValidated::dispatch($order);
 	}
-	
+
 }
