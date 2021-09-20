@@ -24,8 +24,8 @@ class OrdersController extends Controller
 		$todayOrders = $order->whereDate('created_at', Carbon::today())->get();
 		$finishedOrders =$todayOrders->filter(function($order){
 			return $order->status->name == 'ready';
-		})->sortby([['updated_at', 'desc']]);;
-		
+		})->sortby([['updated_at', 'desc']]);
+
 		$pendingOrders = $todayOrders->filter(function($order){
 			return $order->status->name == 'processing';
 		});

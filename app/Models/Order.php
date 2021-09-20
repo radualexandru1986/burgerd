@@ -4,17 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 class Order extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'orders';
     protected $fillable = ['customer_id', 'total', 'payment_method', 'comments', 'status_id', 'customer_notified' ,'created_at', 'updated_at'];
-    
+
     //relations
-	
+
 	/**
 	 * @return BelongsTo
 	 */
@@ -22,7 +24,7 @@ class Order extends Model
 	{
 		return $this->belongsTo(Customer::class, 'customer_id');
 	}
-	
+
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
@@ -30,7 +32,7 @@ class Order extends Model
 	{
 		return $this->hasMany(OrderItems::class, 'order_id');
 	}
-	
+
 	/**
 	 * getting the order status
 	 *
@@ -40,14 +42,15 @@ class Order extends Model
 	{
 		return $this->belongsTo(OrderStatus::class, 'status_id' );
 	}
-	
+
+
 	/**
 	 * @var string[]
 	 */
 	protected $casts = [
 		'created_at'=> 'datetime'
 	];
-	
+
 	/**
 	 * @return mixed
 	 */
@@ -55,7 +58,7 @@ class Order extends Model
 	{
 		return $this->customer_notified;
 	}
-	
+
 	/**
 	 * @todo This should be added to a repository and not in the model
 	 */
@@ -64,7 +67,7 @@ class Order extends Model
 		$this->status_id = OrderStatus::ready();
 		$this->save();
 	}
-	
+
 	/**
 	 * @todo This should be added to a repository and not in the model
 	 */
@@ -73,8 +76,8 @@ class Order extends Model
 		$this->status_id = OrderStatus::processing();
 		$this->save();
 	}
-	
-	
+
+
 	/**
 	 * @todo This should be added to a repository and not in the model
 	 */
@@ -83,4 +86,15 @@ class Order extends Model
 		$this->customer_notified = true;
 		$this->save();
 	}
+
+
+    /**
+     * Global scope
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope('verified', function (Builder $builder) {
+            $builder->where('status_id', '!=', 1);
+        });
+    }
 }
