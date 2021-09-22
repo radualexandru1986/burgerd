@@ -87,14 +87,4 @@ class Order extends Model
 		$this->save();
 	}
 
-
-    /**
-     * Global scope
-     */
-    protected static function booted()
-    {
-        static::addGlobalScope('verified', function (Builder $builder) {
-            $builder->where('status_id', '!=', 1);
-        });
-    }
 }
